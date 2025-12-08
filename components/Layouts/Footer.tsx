@@ -1,0 +1,178 @@
+import React from "react";
+import {
+  Terminal,
+  Github,
+  Linkedin,
+  Twitter,
+  Mail,
+  MapPin,
+  Phone,
+} from "lucide-react";
+import Link from "next/link";
+import Image from "next/image";
+
+const Footer: React.FC = () => {
+  const brandData = {
+    name: "DELTAWARE",
+    description: (
+      <>
+        <span className="text-cyber font-bold">From Coding to Security</span>,
+        Supporting You at Every Step.
+      </>
+    ),
+    socialLinks: [
+      { icon: Github, href: "#", label: "GitHub" },
+      { icon: Linkedin, href: "#", label: "LinkedIn" },
+      { icon: Twitter, href: "#", label: "Twitter" },
+    ],
+  };
+
+  const linkSections = [
+    {
+      title: "Services",
+      links: [
+        { href: "/services", label: "Cybersecurity" },
+        { href: "/services", label: "Web Development" },
+        { href: "/services", label: "AI & ML Solutions" },
+        { href: "/courses", label: "Technical Training" },
+      ],
+    },
+    {
+      title: "Company",
+      links: [
+        { href: "/about", label: "About Us" },
+        { href: "/contact", label: "Contact Us" },
+        { href: "/about", label: "Careers" },
+      ],
+    },
+  ];
+
+  const contactInfo = [
+    {
+      icon: MapPin,
+      content:
+        "Kalu kuwan, Infront of natraj gali, Banda, Uttar Pradesh 210001",
+      href: "https://www.google.com/maps/search/?api=1&query=Kalu+kuwan,+Infront+of+natraj+gali,+Banda,+Uttar+Pradesh+210001",
+    },
+    { icon: Phone, content: "+91 9250534906", href: "tel:+919250534906" },
+    {
+      icon: Mail,
+      content: "info@deltawaresolution.com",
+      href: "mailto:info@deltawaresolution.com",
+    },
+  ];
+
+  const legalLinks = [
+    { href: "/legal", label: "Privacy Policy" },
+    { href: "/legal", label: "Terms of Service" },
+  ];
+
+  return (
+    <footer className="bg-carbon border-t border-white/5 pt-16 pb-8 font-poppins">
+      <div className="container mx-auto px-6">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-[2fr_1fr_1fr_1fr] gap-12 mb-12">
+          <div className="space-y-6">
+            <Link href="/" className="flex items-center gap-2 group">
+              <div className="md:w-16 md:h-16 w-12 h-12 relative bg-gradient-to-br from-cyber to-violet rounded-lg flex items-center justify-center group-hover:shadow-[0_0_15px_#00E6E6] transition-all">
+                <Image
+                  src="/logo.jpg"
+                  alt="Deltaware Logo"
+                  width={100}
+                  height={100}
+                  className="md:w-16 md:h-16 w-12 h-12 rounded-md object-cover"
+                />
+                <div className="h-full w-full absolute inset-0"></div>
+              </div>
+              <div className="flex flex-col">
+                <span className="text-2xl font-heading font-bold text-white leading-none">
+                  DELTAWARE
+                </span>
+                <span className="text-[12px] font-fira-code text-mist tracking-widest">
+                  SOLUTIONS
+                </span>
+              </div>
+            </Link>
+            <p className="text-mist text-lg leading-relaxed">
+              {brandData.description}
+            </p>
+            <div className="flex gap-4">
+              {brandData.socialLinks.map((social, index) => {
+                const Icon = social.icon;
+                return (
+                  <a
+                    key={index}
+                    href={social.href}
+                    className="text-mist hover:text-cyber transition-colors"
+                    aria-label={social.label}
+                  >
+                    <Icon size={20} />
+                  </a>
+                );
+              })}
+            </div>
+          </div>
+
+          {linkSections.map((section, sectionIndex) => (
+            <div key={sectionIndex}>
+              <h4 className="text-white font-heading font-semibold mb-6">
+                {section.title}
+              </h4>
+              <ul className="space-y-3 text-sm text-mist">
+                {section.links.map((link, linkIndex) => (
+                  <li key={linkIndex}>
+                    <Link
+                      href={link.href}
+                      className="hover:text-cyber transition-colors"
+                    >
+                      {link.label}
+                    </Link>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          ))}
+
+          <div>
+            <h4 className="text-white font-heading font-semibold mb-6">
+              Reach Out
+            </h4>
+            <ul className="space-y-4 text-sm text-mist">
+              {contactInfo.map((item, index) => {
+                const Icon = item.icon;
+                return (
+                  <li key={index}>
+                    <a
+                      href={item.href}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="flex items-start gap-2 hover:underline hover:text-cyber transition-colors"
+                    >
+                      <Icon className="text-cyber w-4 h-4 flex-shrink-0" />
+                      <span>{item.content}</span>
+                    </a>
+                  </li>
+                );
+              })}
+            </ul>
+          </div>
+        </div>
+
+        <div className="border-t border-white/5 pt-8 flex flex-col md:flex-row justify-between items-center text-xs text-graphite font-fira-code">
+          <p>
+            &copy; {new Date().getFullYear()} Deltaware Solutions. All rights
+            reserved.
+          </p>
+          <div className="flex gap-6 mt-4 md:mt-0">
+            {legalLinks.map((link, index) => (
+              <Link key={index} href={link.href} className="hover:text-mist">
+                {link.label}
+              </Link>
+            ))}
+          </div>
+        </div>
+      </div>
+    </footer>
+  );
+};
+
+export default Footer;
