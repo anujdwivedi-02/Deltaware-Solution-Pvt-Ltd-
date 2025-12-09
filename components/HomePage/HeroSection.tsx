@@ -5,6 +5,30 @@ import Badge from "../ui/badge";
 import { Highlight } from "../ui/hero-highlight";
 import { motion } from "framer-motion";
 import Image from "next/image";
+import { NumberTicker } from "../ui/NumberTicker";
+const statsData = [
+  {
+    title: "Happy Clients",
+    value: 500,
+    icon: "Happy",
+    color: "text-cyber-teal",
+    prefix: "+",
+  },
+  {
+    title: "Students Trained",
+    value: 2000,
+    icon: "Graduate",
+    color: "text-ai-violet",
+    prefix: "+",
+  },
+  {
+    title: "Projects Delivered",
+    value: 1000,
+    icon: "Project",
+    color: "text-neural-blue",
+    prefix: "+",
+  },
+];
 
 export default function HeroSection() {
   return (
@@ -55,24 +79,22 @@ export default function HeroSection() {
             </div>
 
             <div className="flex flex-wrap gap-8 pt-8">
-              <div className="space-y-1">
-                <p className="text-3xl font-poppins font-bold text-cyber-teal">
-                  500+
-                </p>
-                <p className="text-sm text-soft-graphite">Happy Clients</p>
-              </div>
-              <div className="space-y-1">
-                <p className="text-3xl font-poppins font-bold text-ai-violet">
-                  2000+
-                </p>
-                <p className="text-sm text-soft-graphite">Students Trained</p>
-              </div>
-              <div className="space-y-1">
-                <p className="text-3xl font-poppins font-bold text-neural-blue">
-                  1000+
-                </p>
-                <p className="text-sm text-soft-graphite">Projects Delivered</p>
-              </div>
+              {statsData.map((stateItem, index) => {
+                return (
+                  <div key={index} className="space-y-1">
+                    <p
+                      className={`text-3xl font-poppins font-bold ${stateItem.color}`}
+                    >
+                      <NumberTicker
+                        value={stateItem.value}
+                        className={stateItem.color}
+                      />
+                      {stateItem.prefix}
+                    </p>
+                    <p className="text-sm text-mist">{stateItem.title}</p>
+                  </div>
+                );
+              })}
             </div>
           </div>
 

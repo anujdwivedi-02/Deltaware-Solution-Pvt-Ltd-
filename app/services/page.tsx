@@ -17,6 +17,8 @@ import { ServiceCard } from "@/components/HomePage/Services";
 import Link from "next/link";
 import { SERVICES } from "@/lib/constants";
 import AnimateOnView from "@/components/ui/AnimateOnView";
+import { motion } from "framer-motion";
+import CTABanner from "@/components/HomePage/CTASection";
 
 export default function ServicesPage() {
   const targetAudience = [
@@ -194,9 +196,21 @@ export default function ServicesPage() {
             {/* Services Grid */}
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
               {SERVICES.map((service, index) => (
-                <Link href={`/services/${service.id}`} key={index}>
-                  <ServiceCard {...service} />
-                </Link>
+                <motion.div
+                  key={index}
+                  initial={{ opacity: 0, y: 40 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{
+                    duration: 0.6,
+                    delay: index * 0.1,
+                    ease: "easeOut",
+                  }}
+                >
+                  <Link href={`/services/${service.id}`} key={index}>
+                    <ServiceCard {...service} />
+                  </Link>
+                </motion.div>
               ))}
             </div>
           </div>
@@ -235,7 +249,12 @@ export default function ServicesPage() {
             {/* Audience Grid */}
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
               {targetAudience.map((audience, index) => (
-                <div
+                <motion.div
+                  initial={{ opacity: 0, scale: 0.9 }}
+                  whileInView={{ opacity: 1, scale: 1 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.5, delay: index * 0.1 }}
+                  whileHover={{ scale: 1.05 }}
                   key={index}
                   className="group relative p-6 rounded-2xl bg-carbon border cyber-border hover:border-cyber-teal transition-all duration-300 hover:scale-105 card-glow-hover animate-fade-up overflow-hidden"
                   style={{ animationDelay: `${index * 100}ms` }}
@@ -275,11 +294,15 @@ export default function ServicesPage() {
                       ))}
                     </ul>
                   </div>
-                </div>
+                </motion.div>
               ))}
             </div>
           </div>
         </section>
+      </AnimateOnView>
+
+      <AnimateOnView animationType="slide-up" delay={0.4}>
+        <CTABanner />
       </AnimateOnView>
     </div>
   );

@@ -4,7 +4,6 @@ import AboutSection from "@/components/HomePage/AboutUs";
 const About: React.FC = () => {
   return (
     <div className="pt-32 pb-12">
-      {/* Banner */}
       <div className="container mx-auto px-6 mb-12">
         <div className="bg-gradient-to-r from-violet/20 to-cyber/20 rounded-3xl p-8 md:p-16 border border-white/10 text-center relative overflow-hidden">
           <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-cyber via-magenta to-violet"></div>

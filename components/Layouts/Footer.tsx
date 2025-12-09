@@ -1,6 +1,5 @@
 import React from "react";
 import {
-  Terminal,
   Github,
   Linkedin,
   Twitter,
@@ -42,9 +41,9 @@ const Footer: React.FC = () => {
     {
       title: "Company",
       links: [
-        { href: "/about", label: "About Us" },
-        { href: "/contact", label: "Contact Us" },
-        { href: "/about", label: "Careers" },
+        { href: "/about-us", label: "About Us" },
+        { href: "/contact-us", label: "Contact Us" },
+        { href: "/careers", label: "Careers" },
       ],
     },
   ];

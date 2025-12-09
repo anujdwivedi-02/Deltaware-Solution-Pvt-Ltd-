@@ -7,7 +7,7 @@ import {
 } from "lucide-react";
 import Badge from "../ui/badge";
 import Button from "../ui/Button";
-
+import { motion } from "framer-motion";
 export default function HowToApply() {
   const steps = [
     {
@@ -95,8 +95,16 @@ export default function HowToApply() {
         {/* Steps */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-12">
           {steps.map((step, index) => (
-            <div
+            <motion.div
               key={index}
+              initial={{ opacity: 0, y: 40 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{
+                duration: 0.6,
+                delay: index * 0.1,
+                ease: "easeOut",
+              }}
               className="group relative p-6 rounded-2xl bg-quantum-navy border cyber-border hover:border-cyber-teal transition-all duration-300 hover:scale-105 card-glow-hover animate-fade-up overflow-hidden"
               style={{ animationDelay: `${index * 100}ms` }}
             >
@@ -131,7 +139,7 @@ export default function HowToApply() {
                   ))}
                 </ul>
               </div>
-            </div>
+            </motion.div>
           ))}
         </div>
 

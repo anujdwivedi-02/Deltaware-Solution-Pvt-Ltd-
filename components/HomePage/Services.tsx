@@ -7,6 +7,7 @@ import Image from "next/image";
 import Link from "next/link";
 import AnimateOnView from "../ui/AnimateOnView";
 import { SERVICES } from "@/lib/constants";
+import { motion } from "framer-motion";
 
 interface ServiceCardProps {
   id?: string;
@@ -56,13 +57,17 @@ export function ServiceCard({
         {/* Features */}
         <ul className="space-y-1">
           {features.map((feature, index) => (
-            <li
+            <motion.li
               key={index}
+              initial={{ opacity: 0, x: -20 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: index * 0.1 }}
               className="flex font-fira-code items-start space-x-2 text-sm text-soft-graphite group-hover:text-cyber-teal transition-colors"
             >
               <span className="text-cyber">▸</span>
               <span>{feature}</span>
-            </li>
+            </motion.li>
           ))}
         </ul>
 

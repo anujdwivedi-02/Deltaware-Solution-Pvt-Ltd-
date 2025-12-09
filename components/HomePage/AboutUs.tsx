@@ -1,3 +1,4 @@
+"use client";
 import { Target, Eye, Award, Users } from "lucide-react";
 import Badge from "../ui/badge";
 import { Highlight } from "../ui/hero-highlight";
