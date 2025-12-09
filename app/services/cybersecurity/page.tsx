@@ -5,6 +5,7 @@ import { Highlight } from "@/components/ui/hero-highlight";
 import Image from "next/image";
 import { Shield, Lock, Eye, Bug, Server, Key } from "lucide-react";
 import AnimateOnView from "@/components/ui/AnimateOnView";
+import Button from "@/components/ui/Button";
 
 export default function CybersecurityService() {
   const features = [
@@ -209,27 +210,31 @@ export default function CybersecurityService() {
       </section>
 
       {/* CTA Section */}
-      <section className="py-16 relative overflow-hidden">
-        <div className="absolute inset-0 bg-cyber-grid bg-grid opacity-5"></div>
-        <div className="container mx-auto px-4 lg:px-8 relative z-10">
-          <AnimateOnView
-            className="max-w-4xl mx-auto text-center bg-gradient-to-r from-quantum-navy to-carbon border cyber-border rounded-2xl p-8 md:p-12"
-            animationType="slide-up"
-            delay={0.1}
-          >
-            <h2 className="text-3xl md:text-4xl font-poppins font-bold text-pure-white mb-4">
-              Ready to Secure Your Business?
-            </h2>
-            <p className="text-lg text-mist max-w-2xl mx-auto font-poppins mb-8">
-              Contact us today for a comprehensive security assessment and
-              discover how we can protect your digital assets.
-            </p>
-            <a href="/contact" className="inline-block">
-              <button className="bg-ai-gradient text-pure-white hover:scale-105 transition-all duration-300 shadow-lg hover:shadow-cyber-teal/50 text-lg px-8 py-4 rounded-lg font-poppins font-bold">
-                Get Started Now
-              </button>
-            </a>
-          </AnimateOnView>
+      <section className="pt-10">
+        <div className="container mx-auto px-4 lg:px-8">
+          <div className="bg-gradient-to-r from-quantum-navy to-carbon border border-white/10 rounded-2xl p-8 md:p-12 text-center">
+            <AnimateOnView animationType="fade" delay={0.1}>
+              <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
+                Ready to Advance Your Career?
+              </h2>
+              <p className="text-xl text-mist max-w-2xl mx-auto mb-8">
+                Join thousands of professionals who have transformed their
+                careers with our certifications.
+              </p>
+              <a
+                referrerPolicy="no-referrer-when-downgrade"
+                target="_blank"
+                href={"/contact-us"}
+              >
+                <Button
+                  size="lg"
+                  className="bg-gradient-accent text-pure-white hover:scale-105 transition-all duration-300 shadow-lg hover:shadow-cyber-teal/50"
+                >
+                  Get Started Now
+                </Button>
+              </a>
+            </AnimateOnView>
+          </div>
         </div>
       </section>
     </div>

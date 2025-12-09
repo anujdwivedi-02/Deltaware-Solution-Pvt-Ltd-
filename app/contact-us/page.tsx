@@ -81,12 +81,20 @@ export default function ContactUs() {
                             : "md:col-span-1"
                         }
                       >
-                        <label
-                          htmlFor={field.name}
-                          className="block text-slate-300 mb-2 font-medium"
-                        >
-                          {field.label}
-                        </label>
+                        <div className="flex items-center justify-between gap-2">
+                          <label
+                            htmlFor={field.name}
+                            className="block text-slate-300 mb-2 font-medium"
+                          >
+                            {field.label}
+                          </label>
+                          {formik.touched[field.name as keyof FormValues] &&
+                            formik.errors[field.name as keyof FormValues] && (
+                              <p className="text-sm text-red-400 font-poppins tracking-tight">
+                                {formik.errors[field.name as keyof FormValues]}
+                              </p>
+                            )}
+                        </div>
 
                         {field.type === "textarea" ? (
                           <textarea
@@ -125,13 +133,6 @@ export default function ContactUs() {
                             placeholder={field.placeholder}
                           />
                         )}
-
-                        {formik.touched[field.name as keyof FormValues] &&
-                          formik.errors[field.name as keyof FormValues] && (
-                            <p className="mt-1 text-sm text-red-400">
-                              {formik.errors[field.name as keyof FormValues]}
-                            </p>
-                          )}
                       </div>
                     ))}
                   </div>

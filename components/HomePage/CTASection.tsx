@@ -1,15 +1,14 @@
 "use client";
-import { ArrowRight, Phone, UserPlus } from "lucide-react";
+import { Phone } from "lucide-react";
 import Button from "../ui/Button";
 import Badge from "../ui/badge";
-import AnimatedButton from "../ui/AnimatedButton";
 
 export default function CTABanner() {
   return (
-    <section className="sm:pt-10 pt-6  relative overflow-hidden">
+    <section className="sm:py-10 py-6  relative overflow-hidden">
       <div className="absolute inset-0">
         <img
-          src="/assets/cta-banner-bg.jpg"
+          src="/cta-banner.jpg"
           alt="CTA Background"
           className="w-full h-full object-cover"
         />
@@ -41,10 +40,6 @@ export default function CTABanner() {
           </p>
 
           <div className="flex flex-col sm:flex-row gap-4 justify-center pt-4">
-            <div>
-              <AnimatedButton textName="Enroll Now" />
-            </div>
-
             <Button
               size="lg"
               variant="outline"

@@ -32,10 +32,10 @@ const Footer: React.FC = () => {
     {
       title: "Services",
       links: [
-        { href: "/services", label: "Cybersecurity" },
-        { href: "/services", label: "Web Development" },
-        { href: "/services", label: "AI & ML Solutions" },
-        { href: "/courses", label: "Technical Training" },
+        { href: "/services/cybersecurity", label: "Cybersecurity" },
+        { href: "/services/web-development", label: "Web Development" },
+        { href: "/services/ai-ml", label: "AI & ML Solutions" },
+        { href: "/services/technical-training", label: "Technical Training" },
       ],
     },
     {

@@ -11,6 +11,8 @@ import {
   Handshake,
   GraduationCap,
 } from "lucide-react";
+import AnimateOnView from "@/components/ui/AnimateOnView";
+import Button from "@/components/ui/Button";
 
 export default function InternshipsService() {
   const features = [
@@ -93,8 +95,9 @@ export default function InternshipsService() {
           <div className="max-w-4xl mx-auto text-center">
             <Badge>INTERNSHIPS & JOB ASSISTANCE</Badge>
             <h1 className="mt-6 sm:text-5xl text-4xl font-poppins font-extrabold leading-tight text-pure-white">
+              Internships {""}
               <Highlight className="bg-ai-gradient text-gradient">
-                Internships & Job Assistance
+                & Job Assistance
               </Highlight>
             </h1>
             <p className="mt-6 text-xl text-mist max-w-3xl mx-auto font-poppins">
@@ -299,22 +302,30 @@ export default function InternshipsService() {
       </section>
 
       {/* CTA Section */}
-      <section className="py-16 relative overflow-hidden">
-        <div className="absolute inset-0 bg-cyber-grid bg-grid opacity-5"></div>
-        <div className="container mx-auto px-4 lg:px-8 relative z-10">
-          <div className="max-w-4xl mx-auto text-center bg-gradient-to-r from-quantum-navy to-carbon border cyber-border rounded-2xl p-8 md:p-12">
-            <h2 className="text-3xl md:text-4xl font-poppins font-bold text-pure-white mb-4">
-              Ready to Start Your Tech Career?
-            </h2>
-            <p className="text-lg text-mist max-w-2xl mx-auto font-poppins mb-8">
-              Apply for our internship program today and take the first step
-              toward a successful career in technology.
-            </p>
-            <a href="/contact" className="inline-block">
-              <button className="bg-ai-gradient text-pure-white hover:scale-105 transition-all duration-300 shadow-lg hover:shadow-cyber-teal/50 text-lg px-8 py-4 rounded-lg font-poppins font-bold">
-                Apply Now
-              </button>
-            </a>
+      <section className="pt-10">
+        <div className="container mx-auto px-4 lg:px-8">
+          <div className="bg-gradient-to-r from-quantum-navy to-carbon border border-white/10 rounded-2xl p-8 md:p-12 text-center">
+            <AnimateOnView animationType="fade" delay={0.1}>
+              <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
+                Ready to Advance Your Career?
+              </h2>
+              <p className="text-xl text-mist max-w-2xl mx-auto mb-8">
+                Join thousands of professionals who have transformed their
+                careers with our certifications.
+              </p>
+              <a
+                referrerPolicy="no-referrer-when-downgrade"
+                target="_blank"
+                href={"/contact-us"}
+              >
+                <Button
+                  size="lg"
+                  className="bg-gradient-accent text-pure-white hover:scale-105 transition-all duration-300 shadow-lg hover:shadow-cyber-teal/50"
+                >
+                  Start Your Project
+                </Button>
+              </a>
+            </AnimateOnView>
           </div>
         </div>
       </section>

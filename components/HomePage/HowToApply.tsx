@@ -145,9 +145,9 @@ export default function HowToApply() {
 
         <div className="text-center animate-fade-up">
           <Button
-            onClick={() =>
-              window.open("https://forms.gle/example-form", "_blank")
-            }
+            onClick={() => {
+              window.location.href = "/enroll-now";
+            }}
             size="lg"
             className="bg-ai-gradient text-pure-white hover:scale-105 transition-all duration-300 shadow-lg hover:shadow-cyber-teal/50 text-lg px-8 py-4"
           >
@@ -157,7 +157,10 @@ export default function HowToApply() {
 
           <p className="text-mist mt-4 font-poppins">
             Have questions?{" "}
-            <a href="#contact" className="text-cyber-teal hover:underline">
+            <a
+              href="/contact-us?utm_source=homepage&utm_medium=howtoapply"
+              className="text-cyber-teal hover:underline"
+            >
               Contact us
             </a>{" "}
             for more information.

@@ -4,6 +4,8 @@ import Badge from "@/components/ui/badge";
 import { Highlight } from "@/components/ui/hero-highlight";
 import Image from "next/image";
 import { Code, Smartphone, Database, Globe, Layers, Zap } from "lucide-react";
+import AnimateOnView from "@/components/ui/AnimateOnView";
+import Button from "@/components/ui/Button";
 
 export default function WebDevelopmentService() {
   const features = [
@@ -43,17 +45,6 @@ export default function WebDevelopmentService() {
       description:
         "Clean, maintainable code following best practices and industry standards.",
     },
-  ];
-
-  const technologies = [
-    { name: "React", icon: "⚛️" },
-    { name: "Next.js", icon: "▲" },
-    { name: "Node.js", icon: "⬢" },
-    { name: "TypeScript", icon: "📝" },
-    { name: "Tailwind CSS", icon: "🎨" },
-    { name: "MongoDB", icon: "🍃" },
-    { name: "PostgreSQL", icon: "🐘" },
-    { name: "AWS", icon: "☁️" },
   ];
 
   return (
@@ -158,37 +149,6 @@ export default function WebDevelopmentService() {
         </div>
       </section>
 
-      {/* Technologies Section */}
-      <section className="py-16 bg-quantum-navy relative overflow-hidden">
-        <div className="absolute inset-0 bg-cyber-grid bg-grid opacity-5"></div>
-        <div className="container mx-auto px-4 lg:px-8 relative z-10">
-          <div className="text-center mb-16">
-            <h2 className="text-3xl md:text-4xl font-poppins font-bold text-pure-white mb-4">
-              Technologies We{" "}
-              <span className="bg-ai-gradient text-gradient">Work With</span>
-            </h2>
-            <p className="text-lg text-mist max-w-3xl mx-auto font-poppins">
-              Leveraging the latest tools and frameworks for optimal results
-            </p>
-          </div>
-
-          <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-6 max-w-4xl mx-auto">
-            {technologies.map((tech, index) => (
-              <div
-                key={index}
-                className="flex flex-col items-center justify-center p-6 rounded-2xl bg-carbon border cyber-border hover:border-cyber-teal transition-all duration-300 hover:scale-105 card-glow-hover animate-fade-up"
-                style={{ animationDelay: `${index * 100}ms` }}
-              >
-                <span className="text-3xl mb-3">{tech.icon}</span>
-                <span className="text-mist font-poppins font-medium">
-                  {tech.name}
-                </span>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
       {/* Process Section */}
       <section className="py-16 relative overflow-hidden">
         <div className="absolute inset-0 bg-cyber-grid bg-grid opacity-5"></div>
@@ -267,22 +227,30 @@ export default function WebDevelopmentService() {
       </section>
 
       {/* CTA Section */}
-      <section className="py-16 relative overflow-hidden">
-        <div className="absolute inset-0 bg-cyber-grid bg-grid opacity-5"></div>
-        <div className="container mx-auto px-4 lg:px-8 relative z-10">
-          <div className="max-w-4xl mx-auto text-center bg-gradient-to-r from-quantum-navy to-carbon border cyber-border rounded-2xl p-8 md:p-12">
-            <h2 className="text-3xl md:text-4xl font-poppins font-bold text-pure-white mb-4">
-              Ready to Build Your Digital Presence?
-            </h2>
-            <p className="text-lg text-mist max-w-2xl mx-auto font-poppins mb-8">
-              Contact us today to discuss your web development project and
-              discover how we can bring your ideas to life.
-            </p>
-            <a href="/contact" className="inline-block">
-              <button className="bg-ai-gradient text-pure-white hover:scale-105 transition-all duration-300 shadow-lg hover:shadow-cyber-teal/50 text-lg px-8 py-4 rounded-lg font-poppins font-bold">
-                Start Your Project
-              </button>
-            </a>
+      <section className="pt-10">
+        <div className="container mx-auto px-4 lg:px-8">
+          <div className="bg-gradient-to-r from-quantum-navy to-carbon border border-white/10 rounded-2xl p-8 md:p-12 text-center">
+            <AnimateOnView animationType="fade" delay={0.1}>
+              <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
+                Ready to Advance Your Career?
+              </h2>
+              <p className="text-xl text-mist max-w-2xl mx-auto mb-8">
+                Join thousands of professionals who have transformed their
+                careers with our certifications.
+              </p>
+              <a
+                referrerPolicy="no-referrer-when-downgrade"
+                target="_blank"
+                href={"/contact-us"}
+              >
+                <Button
+                  size="lg"
+                  className="bg-gradient-accent text-pure-white hover:scale-105 transition-all duration-300 shadow-lg hover:shadow-cyber-teal/50"
+                >
+                  Start Your Project
+                </Button>
+              </a>
+            </AnimateOnView>
           </div>
         </div>
       </section>

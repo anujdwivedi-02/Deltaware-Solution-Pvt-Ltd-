@@ -8,7 +8,7 @@ import AnimateOnView from "@/components/ui/AnimateOnView";
 
 export default function Home() {
   return (
-    <div className="min-h-screen bg-quantum sm:pt-32 pt-28 pb-8">
+    <div className="min-h-screen bg-quantum sm:pt-32 pt-28">
       <HeroSection />
       <AnimateOnView animationType="slide-up" delay={0.1}>
         <ServicesSection />

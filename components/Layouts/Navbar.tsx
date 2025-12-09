@@ -38,7 +38,7 @@ const Navbar: React.FC = () => {
             <div className="h-full w-full absolute inset-0"></div>
           </div>
           <div className="flex flex-col">
-            <span className="text-2xl font-heading font-bold text-white leading-none">
+            <span className="text-2xl font-fira-code font-heading font-bold text-white leading-none">
               DELTAWARE
             </span>
             <span className="text-[12px] font-fira-code text-mist tracking-widest">
@@ -68,7 +68,11 @@ const Navbar: React.FC = () => {
             </Link>
           ))}
 
-          <AnimatedButton textName="Enroll Now" type="button" margin="ml-2" />
+          <AnimatedButton
+            textName="Enroll Now"
+            href="/enroll-now"
+            margin="ml-2"
+          />
         </div>
 
         <button
@@ -129,7 +133,7 @@ const Navbar: React.FC = () => {
               ))}
               <AnimatedButton
                 textName="Enroll Now"
-                type="button"
+                href="/enroll-now"
                 margin={"mt-4"}
               />
             </div>

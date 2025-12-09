@@ -4,6 +4,8 @@ import Badge from "@/components/ui/badge";
 import { Highlight } from "@/components/ui/hero-highlight";
 import Image from "next/image";
 import { Cloud, Server, Shield, Zap, GitBranch, Database } from "lucide-react";
+import AnimateOnView from "@/components/ui/AnimateOnView";
+import Button from "@/components/ui/Button";
 
 export default function CloudComputingService() {
   const features = [
@@ -46,12 +48,12 @@ export default function CloudComputingService() {
   ];
 
   const platforms = [
-    { name: "Amazon Web Services", icon: "aws" },
-    { name: "Microsoft Azure", icon: "azure" },
-    { name: "Google Cloud Platform", icon: "gcp" },
-    { name: "Kubernetes", icon: "k8s" },
-    { name: "Docker", icon: "docker" },
-    { name: "Terraform", icon: "terraform" },
+    { name: "Amazon Web Services", icon: "/aws-logo.png" },
+    { name: "Microsoft Azure", icon: "/Azure-Logo.webp" },
+    { name: "Google Cloud Platform", icon: "/google-cloud.webp" },
+    { name: "Kubernetes", icon: "/kubernetes.webp" },
+    { name: "Docker", icon: "/docker.webp" },
+    { name: "Terraform", icon: "/terraform.webp" },
   ];
 
   return (
@@ -68,8 +70,9 @@ export default function CloudComputingService() {
           <div className="max-w-4xl mx-auto text-center">
             <Badge>CLOUD COMPUTING SOLUTIONS</Badge>
             <h1 className="mt-6 sm:text-5xl text-4xl font-poppins font-extrabold leading-tight text-pure-white">
+              Cloud{" "}
               <Highlight className="bg-ai-gradient text-gradient">
-                Cloud Computing Services
+                Computing Services
               </Highlight>
             </h1>
             <p className="mt-6 text-xl text-mist max-w-3xl mx-auto font-poppins">
@@ -179,7 +182,14 @@ export default function CloudComputingService() {
                 className="flex flex-col items-center justify-center p-6 rounded-2xl bg-carbon border cyber-border hover:border-cyber-teal transition-all duration-300 hover:scale-105 card-glow-hover animate-fade-up"
                 style={{ animationDelay: `${index * 100}ms` }}
               >
-                <div className="bg-gray-200 border-2 border-dashed rounded-xl w-16 h-16 mb-3" />
+                <div className="relative bg-gray-200 border-2 rounded-xl w-32 h-20 mb-3 overflow-hidden">
+                  <img
+                    src={platform.icon}
+                    alt={platform.name}
+                    className="w-full h-20 object-contain overflow-hidden"
+                  />
+                  <div className="absolute inset-0 h-full w-full"></div>
+                </div>
                 <span className="text-mist font-poppins font-medium text-center">
                   {platform.name}
                 </span>
@@ -232,22 +242,30 @@ export default function CloudComputingService() {
       </section>
 
       {/* CTA Section */}
-      <section className="py-16 relative overflow-hidden">
-        <div className="absolute inset-0 bg-cyber-grid bg-grid opacity-5"></div>
-        <div className="container mx-auto px-4 lg:px-8 relative z-10">
-          <div className="max-w-4xl mx-auto text-center bg-gradient-to-r from-quantum-navy to-carbon border cyber-border rounded-2xl p-8 md:p-12">
-            <h2 className="text-3xl md:text-4xl font-poppins font-bold text-pure-white mb-4">
-              Ready to Move to the Cloud?
-            </h2>
-            <p className="text-lg text-mist max-w-2xl mx-auto font-poppins mb-8">
-              Contact us today to discuss your cloud computing needs and
-              discover how we can optimize your infrastructure.
-            </p>
-            <a href="/contact" className="inline-block">
-              <button className="bg-ai-gradient text-pure-white hover:scale-105 transition-all duration-300 shadow-lg hover:shadow-cyber-teal/50 text-lg px-8 py-4 rounded-lg font-poppins font-bold">
-                Start Your Cloud Journey
-              </button>
-            </a>
+      <section className="pt-10">
+        <div className="container mx-auto px-4 lg:px-8">
+          <div className="bg-gradient-to-r from-quantum-navy to-carbon border border-white/10 rounded-2xl p-8 md:p-12 text-center">
+            <AnimateOnView animationType="fade" delay={0.1}>
+              <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
+                Ready to Advance Your Career?
+              </h2>
+              <p className="text-xl text-mist max-w-2xl mx-auto mb-8">
+                Join thousands of professionals who have transformed their
+                careers with our certifications.
+              </p>
+              <a
+                referrerPolicy="no-referrer-when-downgrade"
+                target="_blank"
+                href={"/contact-us"}
+              >
+                <Button
+                  size="lg"
+                  className="bg-gradient-accent text-pure-white hover:scale-105 transition-all duration-300 shadow-lg hover:shadow-cyber-teal/50"
+                >
+                  Get Started Now
+                </Button>
+              </a>
+            </AnimateOnView>
           </div>
         </div>
       </section>

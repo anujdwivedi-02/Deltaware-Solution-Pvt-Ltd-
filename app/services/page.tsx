@@ -81,7 +81,7 @@ export default function ServicesPage() {
   ];
 
   return (
-    <div className="min-h-screen bg-quantum sm:pt-32 pt-28 pb-12">
+    <div className="min-h-screen bg-quantum sm:pt-32 pt-28">
       <AnimateOnView animationType="slide-up" delay={0.1}>
         <section
           id="services-hero"

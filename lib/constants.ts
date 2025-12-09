@@ -143,7 +143,7 @@ export const formFields = [
   },
   {
     name: "phone",
-    label: "Phone Number",
+    label: "Phone",
     type: "tel",
     placeholder: "+91 9876543210",
     gridCols: "half",
@@ -193,9 +193,31 @@ export const whyChooseUs = [
     title: "24/7 Support",
     description: "Round-the-clock assistance for all your needs",
   },
+];
+
+export const ENROLL_NOW_COURSES = [
   {
-    icon: Users,
-    title: "Expert Team",
-    description: "Skilled professionals dedicated to your success",
+    id: "cybersecurity",
+    title: "Cybersecurity Professional",
+  },
+  {
+    id: "web-development",
+    title: "Full Stack Web Development",
+  },
+  {
+    id: "ai-ml",
+    title: "AI/ML Engineering",
+  },
+  {
+    id: "cloud-computing",
+    title: "Cloud Solutions Architect",
+  },
+  {
+    id: "technical-training",
+    title: "Technical Training Programs",
+  },
+  {
+    id: "c-programming",
+    title: "C Programming",
   },
 ];
