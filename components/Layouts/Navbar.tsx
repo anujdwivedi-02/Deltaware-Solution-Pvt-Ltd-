@@ -107,18 +107,25 @@ const Navbar: React.FC = () => {
             className="md:hidden bg-quantum/95 backdrop-blur-xl overflow-hidden"
           >
             <div className="flex flex-col p-6 gap-4">
-              {NAV_ITEMS.map((item: any) => (
-                <Link
-                  key={item.path}
-                  href={item.path}
-                  className={`text-lg font-heading hover:text-cyber transition-colors  ${
-                    location.pathname === item.path
-                      ? "text-cyber"
-                      : "text-white"
-                  }`}
+              {NAV_ITEMS.map((item: any, index) => (
+                <motion.div
+                  key={index}
+                  initial={{ opacity: 0, y: 20 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  exit={{ opacity: 0, y: 20 }}
+                  transition={{ delay: index * 0.1 }}
                 >
-                  {item.label}
-                </Link>
+                  <Link
+                    href={item.path}
+                    className={`text-lg font-heading hover:text-cyber transition-colors  ${
+                      location.pathname === item.path
+                        ? "text-cyber"
+                        : "text-white"
+                    }`}
+                  >
+                    {item.label}
+                  </Link>
+                </motion.div>
               ))}
               <AnimatedButton
                 textName="Enroll Now"

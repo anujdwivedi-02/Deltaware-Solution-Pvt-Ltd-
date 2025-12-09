@@ -5,6 +5,8 @@ import Button from "../ui/Button";
 import Badge from "../ui/badge";
 import Image from "next/image";
 import Link from "next/link";
+import AnimateOnView from "../ui/AnimateOnView";
+import { SERVICES } from "@/lib/constants";
 
 interface ServiceCardProps {
   id?: string;
@@ -80,93 +82,6 @@ export function ServiceCard({
 }
 
 export default function ServicesSection() {
-  const services = [
-    {
-      id: "cybersecurity",
-      icon: "/cybersecurity.jpg",
-      title: "Cybersecurity & Ethical Hacking",
-      description:
-        "Protect your digital assets with our comprehensive cybersecurity solutions and ethical hacking services.",
-      features: [
-        "Vulnerability Assessment & Penetration Testing",
-        "Security Audits & Compliance",
-        "Incident Response & Forensics",
-        "Security Architecture Design",
-      ],
-      gradient: "from-cyber to-neural-blue",
-    },
-    {
-      id: "web-development",
-      icon: "/webdev.jpg",
-      title: "Web Development Training",
-      description:
-        "Build scalable, modern applications with cutting-edge technologies and best practices.",
-      features: [
-        "Custom Web & Mobile Applications",
-        "Cloud-Native Solutions",
-        "API Development & Integration",
-        "Enterprise Software Solutions",
-      ],
-      gradient: "from-ai-violet to-neural-blue",
-    },
-    {
-      id: "ai-ml",
-      icon: "/ai-ml.jpg",
-      title: "AI/ML & Data Science Services",
-      description:
-        "Leverage artificial intelligence and machine learning to transform your business with data-driven insights.",
-      features: [
-        "Machine Learning Model Development",
-        "Natural Language Processing",
-        "Computer Vision Solutions",
-        "Predictive Analytics & Forecasting",
-      ],
-      gradient: "from-neural-blue to-ai-violet",
-    },
-    {
-      id: "cloud-computing",
-      icon: "/cloud-computing.jpg",
-      title: "Cloud Computing Services",
-      description:
-        "Harness the power of the cloud with our expert services and solutions.",
-      features: [
-        "Cloud Migration & Strategy",
-        "DevOps & Continuous Integration",
-        "Cloud Security & Compliance",
-        "Cloud-Native Application Development",
-      ],
-      gradient: "from-neon-magenta to-cyber-teal",
-    },
-    {
-      id: "technical-training",
-      icon: "/technical-training.jpg",
-      title: "Technical Training Programs",
-      description:
-        "Master in-demand tech skills with our comprehensive training programs led by industry experts.",
-      features: [
-        "Ethical Hacking Bootcamp",
-        "Full Stack Web Development",
-        "AI/ML & Data Science",
-        "Data Structures & Algorithms",
-      ],
-      gradient: "from-ai-violet to-neon-magenta",
-    },
-    {
-      id: "internships",
-      icon: "/internships.jpg",
-      title: "Internships & Job Assistance",
-      description:
-        "Launch your tech career with hands-on experience and dedicated placement support.",
-      features: [
-        "Real-World Project Experience",
-        "Industry Mentorship",
-        "Resume Building & Interview Prep",
-        "Job Placement Assistance",
-      ],
-      gradient: "from-neon-magenta to-cyber-teal",
-    },
-  ];
-
   return (
     <section
       id="services"
@@ -179,7 +94,11 @@ export default function ServicesSection() {
 
       <div className="container mx-auto px-4 lg:px-8 relative z-10">
         {/* Section Header */}
-        <div className="text-center mb-16 animate-fade-up">
+        <AnimateOnView
+          className="text-center mb-16"
+          animationType="slide-up"
+          delay={0.1}
+        >
           <div className="my-4">
             <Badge>OUR SERVICES</Badge>
           </div>
@@ -192,20 +111,20 @@ export default function ServicesSection() {
             technology services to secure, build, and scale your digital
             presence.
           </p>
-        </div>
+        </AnimateOnView>
 
         {/* Services Grid - Show only 3 services on homepage */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-          {services.slice(0, 3).map((service, index) => (
-            <div
+          {SERVICES.slice(0, 3).map((service, index) => (
+            <AnimateOnView
               key={index}
-              className="animate-fade-up"
-              style={{ animationDelay: `${index * 100}ms` }}
+              animationType="slide-up"
+              delay={0.1 * (index + 1)}
             >
               <Link href={`/services/${service.id}`}>
                 <ServiceCard {...service} />
               </Link>
-            </div>
+            </AnimateOnView>
           ))}
         </div>
 

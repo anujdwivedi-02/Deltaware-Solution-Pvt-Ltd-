@@ -1,6 +1,7 @@
 import { Target, Eye, Award, Users } from "lucide-react";
 import Badge from "../ui/badge";
 import { Highlight } from "../ui/hero-highlight";
+import AnimateOnView from "../ui/AnimateOnView";
 
 export default function AboutSection() {
   const values = [
@@ -43,7 +44,11 @@ export default function AboutSection() {
       <div className="absolute inset-0 bg-cyber-grid bg-grid opacity-5"></div>
 
       <div className="container mx-auto px-4 lg:px-8 relative z-10">
-        <div className="space-y-8 animate-fade-up">
+        <AnimateOnView
+          className="space-y-8"
+          animationType="slide-up"
+          delay={0.1}
+        >
           <div className="mb-6">
             <Badge>ABOUT DELTAWARE</Badge>
           </div>
@@ -75,15 +80,16 @@ export default function AboutSection() {
             strive to stay ahead in the cybersecurity domain, helping
             organizations mitigate risks and strengthen their security posture.
           </p>
-        </div>
+        </AnimateOnView>
 
         {/* Values Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mt-20">
           {values.map((value, index) => (
-            <div
+            <AnimateOnView
               key={index}
-              className="group p-6 rounded-2xl bg-quantum-navy border cyber-border hover:border-cyber-teal transition-all duration-300 hover:scale-105 card-glow-hover animate-fade-up"
-              style={{ animationDelay: `${index * 100}ms` }}
+              className="group p-6 rounded-2xl bg-quantum-navy border cyber-border hover:border-cyber-teal transition-all duration-300 hover:scale-105 card-glow-hover"
+              animationType="slide-up"
+              delay={0.1 * (index + 1)}
             >
               {/* Icon */}
               <div
@@ -99,7 +105,7 @@ export default function AboutSection() {
               <p className="text-sm text-mist font-poppins">
                 {value.description}
               </p>
-            </div>
+            </AnimateOnView>
           ))}
         </div>
       </div>

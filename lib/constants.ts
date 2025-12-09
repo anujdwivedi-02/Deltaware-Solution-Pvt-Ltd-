@@ -1,12 +1,4 @@
-import {
-  Shield,
-  Code2,
-  Brain,
-  BookOpen,
-  GraduationCap,
-  Users,
-} from "lucide-react";
-import { NavItem, Service, Course, Project, Stat, Testimonial } from "./types";
+import { NavItem, Service, Stat, Testimonial } from "./types";
 
 export const NAV_ITEMS: NavItem[] = [
   { label: "Home", path: "/" },
@@ -16,49 +8,6 @@ export const NAV_ITEMS: NavItem[] = [
   { label: "Contact Us", path: "/contact-us" },
   { label: "Careers", path: "/careers" },
   { label: "Certification", path: "/certification" },
-];
-
-export const SERVICES: Service[] = [
-  {
-    id: "cybersecurity",
-    title: "Cybersecurity & Ethical Hacking",
-    description:
-      "Strengthen your defenses with enterprise-grade cybersecurity solutions backed by ethical hacking expertise.",
-    icon: Shield,
-    path: "/services",
-  },
-  {
-    id: "development",
-    title: "Web/App Development",
-    description:
-      "We engineer intelligent, fast, and scalable digital products that accelerate business growth.",
-    icon: Code2,
-    path: "/services",
-  },
-  {
-    id: "ai-ml",
-    title: "AI & Machine Learning",
-    description:
-      "Data-driven intelligence solutions including predictive analytics, NLP, and computer vision.",
-    icon: Brain,
-    path: "/services",
-  },
-  {
-    id: "training",
-    title: "Technical Training",
-    description:
-      "Learn real skills through hands-on training, expert mentorship, and placement-driven programs.",
-    icon: BookOpen,
-    path: "/courses",
-  },
-  {
-    id: "internship",
-    title: "Internship & Job Assistance",
-    description:
-      "Turn your skills into a real career with guided internships and job assistance.",
-    icon: GraduationCap,
-    path: "/about",
-  },
 ];
 
 export const STATS: Stat[] = [
@@ -86,5 +35,92 @@ export const TESTIMONIALS: Testimonial[] = [
     name: "Priya Patel",
     role: "Fullstack Developer",
     text: "The internship program bridged the gap between my college degree and what the industry actually needs. Highly recommended.",
+  },
+];
+
+export const SERVICES = [
+  {
+    id: "cybersecurity",
+    icon: "/cybersecurity.jpg",
+    title: "Cybersecurity & Ethical Hacking",
+    description:
+      "Protect your digital assets with our comprehensive cybersecurity solutions and ethical hacking services.",
+    features: [
+      "Vulnerability Assessment & Penetration Testing",
+      "Security Audits & Compliance",
+      "Incident Response & Forensics",
+      "Security Architecture Design",
+    ],
+    gradient: "from-cyber to-neural-blue",
+  },
+  {
+    id: "web-development",
+    icon: "/webdev.jpg",
+    title: "Web Development Training",
+    description:
+      "Build scalable, modern applications with cutting-edge technologies and best practices.",
+    features: [
+      "Custom Web & Mobile Applications",
+      "Cloud-Native Solutions",
+      "API Development & Integration",
+      "Enterprise Software Solutions",
+    ],
+    gradient: "from-ai-violet to-neural-blue",
+  },
+  {
+    id: "ai-ml",
+    icon: "/ai-ml.jpg",
+    title: "AI/ML & Data Science Services",
+    description:
+      "Leverage artificial intelligence and machine learning to transform your business with data-driven insights.",
+    features: [
+      "Machine Learning Model Development",
+      "Natural Language Processing",
+      "Computer Vision Solutions",
+      "Predictive Analytics & Forecasting",
+    ],
+    gradient: "from-neural-blue to-ai-violet",
+  },
+  {
+    id: "cloud-computing",
+    icon: "/cloud-computing.jpg",
+    title: "Cloud Computing Services",
+    description:
+      "Harness the power of the cloud with our expert services and solutions.",
+    features: [
+      "Cloud Migration & Strategy",
+      "DevOps & Continuous Integration",
+      "Cloud Security & Compliance",
+      "Cloud-Native Application Development",
+    ],
+    gradient: "from-neon-magenta to-cyber-teal",
+  },
+  {
+    id: "technical-training",
+    icon: "/technical-training.jpg",
+    title: "Technical Training Programs",
+    description:
+      "Master in-demand tech skills with our comprehensive training programs led by industry experts.",
+    features: [
+      "Ethical Hacking Bootcamp",
+      "Full Stack Web Development",
+      "AI/ML & Data Science",
+      "Data Structures & Algorithms",
+    ],
+    gradient: "from-ai-violet to-neon-magenta",
+  },
+  {
+    id: "internships",
+    icon: "/internships.jpg",
+    title: "Internships & Job Assistance",
+    description:
+      "Launch your tech career with hands-on experience and dedicated placement support.",
+    features: [
+      "Real-World Project Experience",
+      "Industry Mentorship",
+      "Resume Building & Interview Prep",
+      "Job Placement Assistance",
+    ],
+    gradient: "from-neon-magenta to-cyber-teal",
   },
 ];

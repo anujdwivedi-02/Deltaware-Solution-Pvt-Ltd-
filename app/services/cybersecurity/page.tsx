@@ -4,6 +4,7 @@ import Badge from "@/components/ui/badge";
 import { Highlight } from "@/components/ui/hero-highlight";
 import Image from "next/image";
 import { Shield, Lock, Eye, Bug, Server, Key } from "lucide-react";
+import AnimateOnView from "@/components/ui/AnimateOnView";
 
 export default function CybersecurityService() {
   const features = [
@@ -66,16 +67,22 @@ export default function CybersecurityService() {
 
         <div className="container mx-auto px-4 lg:px-8 relative z-10">
           <div className="max-w-4xl mx-auto text-center">
-            <Badge>CYBERSECURITY SOLUTIONS</Badge>
-            <h1 className="mt-6 sm:text-5xl text-4xl font-poppins font-extrabold leading-tight text-pure-white">
-              <Highlight className="bg-ai-gradient text-gradient">
-                Cybersecurity & Ethical Hacking
-              </Highlight>
-            </h1>
-            <p className="mt-6 text-xl text-mist max-w-3xl mx-auto font-poppins">
-              Protect your digital assets with our comprehensive cybersecurity
-              solutions and ethical hacking services.
-            </p>
+            <AnimateOnView animationType="slide-up" delay={0.1}>
+              <Badge>CYBERSECURITY SOLUTIONS</Badge>
+            </AnimateOnView>
+            <AnimateOnView animationType="slide-up" delay={0.2}>
+              <h1 className="mt-6 sm:text-5xl text-4xl font-poppins font-extrabold leading-tight text-pure-white">
+                <Highlight className="bg-ai-gradient text-gradient">
+                  Cybersecurity & Ethical Hacking
+                </Highlight>
+              </h1>
+            </AnimateOnView>
+            <AnimateOnView animationType="slide-up" delay={0.3}>
+              <p className="mt-6 text-xl text-mist max-w-3xl mx-auto font-poppins">
+                Protect your digital assets with our comprehensive cybersecurity
+                solutions and ethical hacking services.
+              </p>
+            </AnimateOnView>
           </div>
         </div>
       </section>
@@ -85,7 +92,7 @@ export default function CybersecurityService() {
         <div className="absolute inset-0 bg-cyber-grid bg-grid opacity-5"></div>
         <div className="container mx-auto px-4 lg:px-8 relative z-10">
           <div className="grid lg:grid-cols-2 gap-12 items-center">
-            <div className="animate-fade-up">
+            <AnimateOnView animationType="slide-up" delay={0.1}>
               <h2 className="text-3xl md:text-4xl font-poppins font-bold text-pure-white mb-6">
                 Securing Your Digital Future
               </h2>
@@ -101,8 +108,8 @@ export default function CybersecurityService() {
                 before malicious actors can exploit them. We provide end-to-end
                 security solutions tailored to your specific business needs.
               </p>
-            </div>
-            <div className="animate-fade-up">
+            </AnimateOnView>
+            <AnimateOnView animationType="slide-up" delay={0.2}>
               <div className="relative rounded-2xl overflow-hidden border cyber-border">
                 <Image
                   src="/cybersecurity.jpg"
@@ -113,7 +120,7 @@ export default function CybersecurityService() {
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-quantum-navy to-transparent"></div>
               </div>
-            </div>
+            </AnimateOnView>
           </div>
         </div>
       </section>
@@ -124,7 +131,11 @@ export default function CybersecurityService() {
         <div className="absolute top-1/4 right-0 w-96 h-96 bg-ai-violet/20 rounded-full blur-3xl"></div>
 
         <div className="container mx-auto px-4 lg:px-8 relative z-10">
-          <div className="text-center mb-16">
+          <AnimateOnView
+            className="text-center mb-16"
+            animationType="slide-up"
+            delay={0.1}
+          >
             <h2 className="text-3xl md:text-4xl font-poppins font-bold text-pure-white mb-4">
               Our{" "}
               <span className="bg-ai-gradient text-gradient">
@@ -135,14 +146,15 @@ export default function CybersecurityService() {
             <p className="text-lg text-mist max-w-3xl mx-auto font-poppins">
               Comprehensive security solutions to protect your digital assets
             </p>
-          </div>
+          </AnimateOnView>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {features.map((feature, index) => (
-              <div
+              <AnimateOnView
                 key={index}
-                className="group p-6 rounded-2xl bg-carbon border cyber-border hover:border-cyber-teal transition-all duration-300 hover:scale-105 card-glow-hover animate-fade-up"
-                style={{ animationDelay: `${index * 100}ms` }}
+                className="group p-6 rounded-2xl bg-carbon border cyber-border hover:border-cyber-teal transition-all duration-300 hover:scale-105 card-glow-hover"
+                animationType="slide-up"
+                delay={0.1 * (index + 1)}
               >
                 <div className="inline-flex p-3 rounded-xl bg-gradient-to-br from-cyber to-neural-blue mb-4 group-hover:scale-110 transition-transform duration-300">
                   <div className="text-white">{feature.icon}</div>
@@ -151,7 +163,7 @@ export default function CybersecurityService() {
                   {feature.title}
                 </h3>
                 <p className="text-mist font-poppins">{feature.description}</p>
-              </div>
+              </AnimateOnView>
             ))}
           </div>
         </div>
@@ -162,7 +174,11 @@ export default function CybersecurityService() {
         <div className="absolute inset-0 bg-cyber-grid bg-grid opacity-5"></div>
         <div className="container mx-auto px-4 lg:px-8 relative z-10">
           <div className="max-w-4xl mx-auto">
-            <div className="text-center mb-12">
+            <AnimateOnView
+              className="text-center mb-12"
+              animationType="slide-up"
+              delay={0.1}
+            >
               <h2 className="text-3xl md:text-4xl font-poppins font-bold text-pure-white mb-4">
                 Key{" "}
                 <span className="bg-ai-gradient text-gradient">Benefits</span>
@@ -171,20 +187,21 @@ export default function CybersecurityService() {
                 Why our cybersecurity services are the right choice for your
                 organization
               </p>
-            </div>
+            </AnimateOnView>
 
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
               {benefits.map((benefit, index) => (
-                <div
+                <AnimateOnView
                   key={index}
-                  className="flex items-start p-4 rounded-xl bg-carbon/50 border cyber-border animate-fade-up"
-                  style={{ animationDelay: `${index * 100}ms` }}
+                  className="flex items-start p-4 rounded-xl bg-carbon/50 border cyber-border"
+                  animationType="slide-up"
+                  delay={0.1 * (index + 1)}
                 >
                   <div className="flex-shrink-0 mt-1 mr-4">
                     <div className="w-2 h-2 rounded-full bg-cyber"></div>
                   </div>
                   <p className="text-mist font-poppins">{benefit}</p>
-                </div>
+                </AnimateOnView>
               ))}
             </div>
           </div>
@@ -195,7 +212,11 @@ export default function CybersecurityService() {
       <section className="py-16 relative overflow-hidden">
         <div className="absolute inset-0 bg-cyber-grid bg-grid opacity-5"></div>
         <div className="container mx-auto px-4 lg:px-8 relative z-10">
-          <div className="max-w-4xl mx-auto text-center bg-gradient-to-r from-quantum-navy to-carbon border cyber-border rounded-2xl p-8 md:p-12">
+          <AnimateOnView
+            className="max-w-4xl mx-auto text-center bg-gradient-to-r from-quantum-navy to-carbon border cyber-border rounded-2xl p-8 md:p-12"
+            animationType="slide-up"
+            delay={0.1}
+          >
             <h2 className="text-3xl md:text-4xl font-poppins font-bold text-pure-white mb-4">
               Ready to Secure Your Business?
             </h2>
@@ -208,7 +229,7 @@ export default function CybersecurityService() {
                 Get Started Now
               </button>
             </a>
-          </div>
+          </AnimateOnView>
         </div>
       </section>
     </div>

@@ -159,7 +159,7 @@ const Footer: React.FC = () => {
             &copy; {new Date().getFullYear()} Deltaware Solutions. All rights
             reserved.
           </p>
-          <div className="flex gap-4">
+          <div className="flex gap-4 sm:my-0 mt-3">
             {socialLinks.map((social, index) => {
               // const Icon = social.icon;
               return (
