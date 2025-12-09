@@ -1,3 +1,4 @@
+import { Clock, Mail, MapPin, Phone, Users } from "lucide-react";
 import { NavItem, Service, Stat, Testimonial } from "./types";
 
 export const NAV_ITEMS: NavItem[] = [
@@ -122,5 +123,79 @@ export const SERVICES = [
       "Job Placement Assistance",
     ],
     gradient: "from-neon-magenta to-cyber-teal",
+  },
+];
+
+export const formFields = [
+  {
+    name: "name",
+    label: "Full Name",
+    type: "text",
+    placeholder: "Enter your name",
+    gridCols: "full",
+  },
+  {
+    name: "email",
+    label: "Email Address",
+    type: "email",
+    placeholder: "your@email.com",
+    gridCols: "half",
+  },
+  {
+    name: "phone",
+    label: "Phone Number",
+    type: "tel",
+    placeholder: "+91 9876543210",
+    gridCols: "half",
+  },
+  {
+    name: "message",
+    label: "Your Message",
+    type: "textarea",
+    placeholder: "Tell us about your project or inquiry...",
+    rows: 5,
+    gridCols: "full",
+  },
+];
+
+export const contactInfo = [
+  {
+    icon: MapPin,
+    title: "Our Location",
+    content: "Kalu kuwan, Infront of natraj gali, Banda, Uttar Pradesh 210001",
+    bgColor: "bg-cyan-500/10",
+    borderColor: "border-cyan-500/30",
+    iconColor: "text-cyan-400",
+  },
+  {
+    icon: Phone,
+    title: "Phone Number",
+    content: "+91 9250534906",
+    link: "tel:+919250534906",
+    bgColor: "bg-purple-500/10",
+    borderColor: "border-purple-500/30",
+    iconColor: "text-purple-400",
+  },
+  {
+    icon: Mail,
+    title: "Email Address",
+    content: "info@deltawaresolution.com",
+    link: "mailto:info@deltawaresolution.com",
+    bgColor: "bg-blue-500/10",
+    borderColor: "border-blue-500/30",
+    iconColor: "text-blue-400",
+  },
+];
+
+export const whyChooseUs = [
+  {
+    icon: Clock,
+    title: "24/7 Support",
+    description: "Round-the-clock assistance for all your needs",
+  },
+  {
+    icon: Users,
+    title: "Expert Team",
+    description: "Skilled professionals dedicated to your success",
   },
 ];

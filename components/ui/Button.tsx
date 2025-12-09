@@ -7,6 +7,7 @@ interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
   variant?: "primary" | "secondary" | "outline" | "ghost";
   size?: "sm" | "md" | "lg";
   icon?: React.ReactNode;
+  disabled?: boolean | undefined;
 }
 
 const Button: React.FC<ButtonProps> = ({
@@ -15,6 +16,7 @@ const Button: React.FC<ButtonProps> = ({
   size = "md",
   className = "",
   icon,
+  disabled,
   ...props
 }) => {
   const baseStyles =
@@ -63,8 +65,9 @@ const Button: React.FC<ButtonProps> = ({
       className={cn(baseStyles, variants[variant], sizes[size], className)}
     >
       <button
+        disabled={disabled}
         {...(restProps as React.ButtonHTMLAttributes<HTMLButtonElement>)}
-        className={`cursor-pointer w-full h-full text-center `}
+        className={`cursor-pointer disabled:opacity-50 disabled:cursor-not-allowed w-full h-full text-center `}
       >
         <span
           className={`relative z-10 flex items-center gap-2 ${

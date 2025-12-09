@@ -87,7 +87,7 @@ export default function ServicesPage() {
           id="services-hero"
           className="relative min-h-screen flex items-center justify-center overflow-hidden sm:pb-10 pb-6 bg-gradient-to-br from-quantum-navy via-carbon to-quantum-navy"
         >
-          <div className="absolute inset-0 bg-[url('/grid-pattern.svg')] bg-repeat opacity-5"></div>
+          <div className="absolute inset-0 bg-repeat opacity-5"></div>
           <div className="absolute inset-0 bg-gradient-to-br from-cyber-teal/5 via-transparent to-ai-violet/5"></div>
           <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-ai-violet/10 rounded-full blur-[150px] animate-pulse"></div>
           <div className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-cyber-teal/10 rounded-full blur-[150px] animate-pulse animation-delay-1000"></div>

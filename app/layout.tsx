@@ -5,7 +5,9 @@ import "./globals.css";
 
 export const metadata: Metadata = {
   title: "Deltaware Solution - Next Generation Web Solution",
-  description: "Deltaware Solution is a next generation of web solution",
+  description:
+    "Deltaware Solutions is a leading provider of AI-powered solutions for the financial services industry. Our team of experts is dedicated to helping our clients succeed in a data-driven world.",
+
   keywords:
     "Deltaware Solution, Next Generation Web Solution, Web Development, Software Development, Digital Solution, Innovative Technology, Modern Web Solution, Deltaware Solution, Deltaware Solution, Deltaware Solution, Next Generation Web Solution",
   authors: [
