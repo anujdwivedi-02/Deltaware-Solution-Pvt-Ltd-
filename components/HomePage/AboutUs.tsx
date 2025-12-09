@@ -3,6 +3,7 @@ import { Target, Eye, Award, Users } from "lucide-react";
 import Badge from "../ui/badge";
 import { Highlight } from "../ui/hero-highlight";
 import AnimateOnView from "../ui/AnimateOnView";
+import CTABanner from "./CTASection";
 
 export default function AboutSection() {
   const values = [
@@ -39,7 +40,7 @@ export default function AboutSection() {
   return (
     <section
       id="about"
-      className="sm:py-10 py-6  bg-carbon-grey relative overflow-hidden"
+      className="sm:pt-10 pt-6  bg-carbon-grey relative overflow-hidden"
     >
       {/* Background Elements */}
       <div className="absolute inset-0 bg-cyber-grid bg-grid opacity-5"></div>
@@ -110,6 +111,9 @@ export default function AboutSection() {
           ))}
         </div>
       </div>
+      <AnimateOnView className="mt-12" animationType="slide-up" delay={0.2}>
+        <CTABanner />
+      </AnimateOnView>
     </section>
   );
 }

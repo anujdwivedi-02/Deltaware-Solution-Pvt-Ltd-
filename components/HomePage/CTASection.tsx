@@ -6,7 +6,7 @@ import AnimatedButton from "../ui/AnimatedButton";
 
 export default function CTABanner() {
   return (
-    <section className="sm:py-10 py-6  relative overflow-hidden">
+    <section className="sm:pt-10 pt-6  relative overflow-hidden">
       <div className="absolute inset-0">
         <img
           src="/assets/cta-banner-bg.jpg"
