@@ -12,9 +12,9 @@ export const NAV_ITEMS: NavItem[] = [
   { label: "Home", path: "/" },
   { label: "Services", path: "/services" },
   // { label: "Courses", path: "/courses" },
-  { label: "About Us", path: "/about" },
-  { label: "Contact Us", path: "/contact" },
-  { label: "Careers", path: "/career" },
+  { label: "About Us", path: "/about-us" },
+  { label: "Contact Us", path: "/contact-us" },
+  { label: "Careers", path: "/careers" },
   { label: "Certification", path: "/certification" },
 ];
 

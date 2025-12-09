@@ -7,6 +7,8 @@ import {
   Mail,
   MapPin,
   Phone,
+  Facebook,
+  Instagram,
 } from "lucide-react";
 import Link from "next/link";
 import Image from "next/image";
@@ -66,6 +68,16 @@ const Footer: React.FC = () => {
     { href: "/legal", label: "Privacy Policy" },
     { href: "/legal", label: "Terms of Service" },
   ];
+  const socialLinks = [
+    { icon: <Facebook className="w-5 h-5" />, href: "#", label: "Facebook" },
+    { icon: <Twitter className="w-5 h-5" />, href: "#", label: "Twitter" },
+    { icon: <Linkedin className="w-5 h-5" />, href: "#", label: "LinkedIn" },
+    {
+      icon: <Instagram className="w-5 h-5" />,
+      href: "#",
+      label: "Instagram",
+    },
+  ];
 
   return (
     <footer className="bg-carbon border-t border-white/5 pt-16 pb-8 font-poppins">
@@ -92,24 +104,9 @@ const Footer: React.FC = () => {
                 </span>
               </div>
             </Link>
-            <p className="text-mist text-lg leading-relaxed">
+            <p className="text-mist text-xl leading-relaxed">
               {brandData.description}
             </p>
-            <div className="flex gap-4">
-              {brandData.socialLinks.map((social, index) => {
-                const Icon = social.icon;
-                return (
-                  <a
-                    key={index}
-                    href={social.href}
-                    className="text-mist hover:text-cyber transition-colors"
-                    aria-label={social.label}
-                  >
-                    <Icon size={20} />
-                  </a>
-                );
-              })}
-            </div>
           </div>
 
           {linkSections.map((section, sectionIndex) => (
@@ -162,6 +159,21 @@ const Footer: React.FC = () => {
             &copy; {new Date().getFullYear()} Deltaware Solutions. All rights
             reserved.
           </p>
+          <div className="flex gap-4">
+            {socialLinks.map((social, index) => {
+              // const Icon = social.icon;
+              return (
+                <a
+                  key={index}
+                  href={social.href}
+                  className="p-2 rounded-lg bg-quantum-navy border cyber-border hover:border-cyber-teal hover:bg-cyber-teal/10 transition-all duration-300 text-mist hover:text-cyber-teal"
+                  aria-label={social.label}
+                >
+                  {social.icon}
+                </a>
+              );
+            })}
+          </div>
           <div className="flex gap-6 mt-4 md:mt-0">
             {legalLinks.map((link, index) => (
               <Link key={index} href={link.href} className="hover:text-mist">

@@ -15,6 +15,12 @@ export default function HowToApply() {
       title: "Fill Application Form",
       description:
         "Complete our simple online application form with your personal and educational details.",
+      details: [
+        "Basic Personal Information",
+        "Educational Background",
+        "Preferred Course Selection",
+        "Career Goals & Aspirations",
+      ],
       gradient: "from-cyber-teal to-neural-blue",
     },
     {
@@ -22,6 +28,12 @@ export default function HowToApply() {
       title: "Schedule Consultation",
       description:
         "Book a free consultation session with our career advisors to discuss your goals.",
+      details: [
+        "Flexible Scheduling Options",
+        "Expert Career Guidance",
+        "Program Customization",
+        "Financial Planning Discussion",
+      ],
       gradient: "from-ai-violet to-magenta",
     },
     {
@@ -29,6 +41,12 @@ export default function HowToApply() {
       title: "Discussion & Planning",
       description:
         "We'll assess your background and create a personalized learning roadmap for you.",
+      details: [
+        "Skill Gap Analysis",
+        "Learning Path Customization",
+        "Timeline & Milestones Setting",
+        "Resource Allocation Planning",
+      ],
       gradient: "from-neural-blue to-ai-violet",
     },
     {
@@ -36,6 +54,12 @@ export default function HowToApply() {
       title: "Enrollment Confirmation",
       description:
         "Once confirmed, you'll get instant access to course materials and community.",
+      details: [
+        "Instant Platform Access",
+        "Welcome Kit Delivery",
+        "Community Onboarding",
+        "Mentor Assignment",
+      ],
       gradient: "from-magenta to-cyber-teal",
     },
   ];
@@ -73,33 +97,44 @@ export default function HowToApply() {
           {steps.map((step, index) => (
             <div
               key={index}
-              className="group relative p-6 rounded-2xl bg-quantum-navy border cyber-border hover:border-cyber-teal transition-all duration-300 hover:scale-105 card-glow-hover animate-fade-up"
+              className="group relative p-6 rounded-2xl bg-quantum-navy border cyber-border hover:border-cyber-teal transition-all duration-300 hover:scale-105 card-glow-hover animate-fade-up overflow-hidden"
               style={{ animationDelay: `${index * 100}ms` }}
             >
-              {/* Step Number */}
-              <div className="absolute -top-3 -left-3 w-8 h-8 rounded-full bg-cyber-teal flex items-center justify-center text-quantum-navy font-bold font-orbitron">
-                {index + 1}
-              </div>
+              <div className="absolute inset-0 bg-gradient-to-b from-transparent to-quantum-navy rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-300 z-10"></div>
 
-              {/* Icon */}
               <div
-                className={`inline-flex p-4 rounded-xl bg-gradient-to-br ${step.gradient} mb-4 group-hover:scale-110 transition-transform duration-300`}
+                className={`inline-flex p-4 rounded-xl bg-gradient-to-br ${step.gradient} mb-4 group-hover:scale-110 transition-transform duration-300 relative z-20`}
               >
                 <div className="text-white">{step.icon}</div>
               </div>
 
-              {/* Content */}
-              <h3 className="text-xl font-orbitron font-bold text-pure-white mb-3 group-hover:text-cyber-teal transition-colors">
+              <h3 className="text-xl font-orbitron font-bold text-pure-white mb-3 group-hover:text-cyber-teal transition-colors relative z-20">
                 {step.title}
               </h3>
-              <p className="text-sm text-mist font-poppins">
+              <p className="text-sm text-mist font-poppins relative z-20">
                 {step.description}
               </p>
+
+              <div className="absolute bottom-0 left-0 right-0 p-6 bg-quantum-navy/20 backdrop-blur-md translate-y-full group-hover:translate-y-0 transition-transform duration-500 ease-in-out rounded-b-2xl z-20">
+                <h4 className="text-cyber-teal font-orbitron font-bold text-sm mb-2">
+                  Includes:
+                </h4>
+                <ul className="space-y-1">
+                  {step.details.map((detail, detailIndex) => (
+                    <li
+                      key={detailIndex}
+                      className="text-xs text-mist font-poppins flex items-start"
+                    >
+                      <span className="text-cyber-teal mr-2">•</span>
+                      <span>{detail}</span>
+                    </li>
+                  ))}
+                </ul>
+              </div>
             </div>
           ))}
         </div>
 
-        {/* CTA */}
         <div className="text-center animate-fade-up">
           <Button
             onClick={() =>

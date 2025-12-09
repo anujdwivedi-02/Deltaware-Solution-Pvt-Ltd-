@@ -14,6 +14,9 @@ export default function HeroSection() {
     >
       <div className="absolute inset-0 bg-quantum-navy">
         <div className="absolute inset-0 bg-cyber-grid bg-grid opacity-20"></div>
+        <div className="absolute inset-0 cyber-grid z-0"></div>
+        <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-violet/20 rounded-full blur-[100px] z-0"></div>
+        <div className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-cyber/10 rounded-full blur-[100px] z-0"></div>
 
         <div className="absolute inset-0 opacity-30">
           <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-ai-violet rounded-full blur-3xl animate-pulse-glow"></div>
@@ -44,7 +47,7 @@ export default function HeroSection() {
               <Button
                 onClick={() => (window.location.href = "#services")}
                 size="lg"
-                className="bg-ai-gradient text-pure-white hover:scale-105 transition-all duration-300 shadow-lg hover:shadow-cyber-teal/50 text-lg px-8 py-4"
+                className="bg-ai-gradient text-pure-white hover:scale-105 transition-all duration-300 shadow-lg hover:shadow-cyber-teal/50 text-lg px-8 py-3"
               >
                 Explore Services
                 <ArrowDown className="ml-2 w-5 h-5" />

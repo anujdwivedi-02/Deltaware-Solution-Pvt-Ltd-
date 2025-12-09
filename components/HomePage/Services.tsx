@@ -4,8 +4,10 @@ import { ArrowRight } from "lucide-react";
 import Button from "../ui/Button";
 import Badge from "../ui/badge";
 import Image from "next/image";
+import Link from "next/link";
 
 interface ServiceCardProps {
+  id?: string;
   icon: string;
   title: string;
   description: string;
@@ -13,7 +15,8 @@ interface ServiceCardProps {
   gradient: string;
 }
 
-function ServiceCard({
+export function ServiceCard({
+  id,
   icon,
   title,
   description,
@@ -64,7 +67,7 @@ function ServiceCard({
         {/* CTA Button */}
         <Button
           variant="ghost"
-          className="w-full text-cyber-teal border border-cyber-teal/30 hover:bg-cyber-teal hover:text-quantum-navy transition-all duration-300 group/btn"
+          className="w-full cursor-pointer text-cyber-teal border border-cyber-teal/30 hover:bg-cyber-teal hover:text-quantum-navy transition-all duration-300 group/btn"
         >
           Know More
           <ArrowRight className="ml-2 w-4 h-4 group-hover/btn:translate-x-1 transition-transform" />
@@ -79,6 +82,7 @@ function ServiceCard({
 export default function ServicesSection() {
   const services = [
     {
+      id: "cybersecurity",
       icon: "/cybersecurity.jpg",
       title: "Cybersecurity & Ethical Hacking",
       description:
@@ -92,6 +96,7 @@ export default function ServicesSection() {
       gradient: "from-cyber to-neural-blue",
     },
     {
+      id: "web-development",
       icon: "/webdev.jpg",
       title: "Web Development Training",
       description:
@@ -105,6 +110,7 @@ export default function ServicesSection() {
       gradient: "from-ai-violet to-neural-blue",
     },
     {
+      id: "ai-ml",
       icon: "/ai-ml.jpg",
       title: "AI/ML & Data Science Services",
       description:
@@ -118,6 +124,7 @@ export default function ServicesSection() {
       gradient: "from-neural-blue to-ai-violet",
     },
     {
+      id: "cloud-computing",
       icon: "/cloud-computing.jpg",
       title: "Cloud Computing Services",
       description:
@@ -131,6 +138,7 @@ export default function ServicesSection() {
       gradient: "from-neon-magenta to-cyber-teal",
     },
     {
+      id: "technical-training",
       icon: "/technical-training.jpg",
       title: "Technical Training Programs",
       description:
@@ -144,6 +152,7 @@ export default function ServicesSection() {
       gradient: "from-ai-violet to-neon-magenta",
     },
     {
+      id: "internships",
       icon: "/internships.jpg",
       title: "Internships & Job Assistance",
       description:
@@ -185,17 +194,29 @@ export default function ServicesSection() {
           </p>
         </div>
 
-        {/* Services Grid */}
+        {/* Services Grid - Show only 3 services on homepage */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-          {services.map((service, index) => (
+          {services.slice(0, 3).map((service, index) => (
             <div
               key={index}
               className="animate-fade-up"
               style={{ animationDelay: `${index * 100}ms` }}
             >
-              <ServiceCard {...service} />
+              <Link href={`/services/${service.id}`}>
+                <ServiceCard {...service} />
+              </Link>
             </div>
           ))}
+        </div>
+
+        {/* View All Services Button */}
+        <div className="text-center flex items-center justify-center w-full mt-16 mb-8">
+          <Link href="/services" className="cursor-pointer">
+            <button className="cursor-pointer flex items-center gap-2 bg-ai-gradient text-pure-white hover:scale-105 transition-all duration-300 shadow-lg hover:shadow-cyber-teal/50 text-lg px-8 py-3">
+              View All Services
+              <ArrowRight className="ml-2 w-5 h-5" />
+            </button>
+          </Link>
         </div>
       </div>
     </section>
