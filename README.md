@@ -33,6 +33,19 @@ This project uses Supabase for form data storage. To set up Supabase:
    ```
 4. Follow the instructions in `SUPABASE_SETUP.md` to create the required database tables
 
+## Email/SMTP Integration
+
+This project uses Nodemailer for sending emails through SMTP. To configure email functionality:
+
+1. Add the following environment variables to your `.env.local` file:
+   ```
+   NEXT_PUBLIC_EMAIL_HOST=your_email_host
+   NEXT_PUBLIC_EMAIL_PORT=your_email_port
+   NEXT_PUBLIC_EMAIL_USER=your_email_user
+   NEXT_PUBLIC_EMAIL_PASSWORD=your_email_password
+   ```
+2. Refer to `EMAIL_INTEGRATION.md` for detailed setup instructions and technical information
+
 ## Learn More
 
 To learn more about Next.js, take a look at the following resources:
