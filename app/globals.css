@@ -268,4 +268,40 @@
   .cyber-border-hover:hover {
     border-color: rgba(0, 230, 230, 0.6);
   }
+
+  /* Fade in animation for form messages */
+  .animate-fadeIn {
+    animation: fadeIn 0.3s ease-in-out;
+  }
+
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+      transform: translateY(-10px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+}
+
+/* Auto-close animation for form messages */
+.animate-autoClose {
+  animation: autoClose 5s ease-in-out forwards;
+}
+
+@keyframes autoClose {
+  0% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  90% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  100% {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
 }
