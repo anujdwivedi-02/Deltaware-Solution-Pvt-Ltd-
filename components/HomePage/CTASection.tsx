@@ -43,6 +43,7 @@ export default function CTABanner() {
             <Button
               size="lg"
               variant="outline"
+              onClick={() => (window.location.href = "tel:+919250534906")}
               className="cursor-pointer border-2 border-cyber-teal text-cyber-teal hover:bg-cyber-teal hover:text-quantum-navy transition-all duration-300 text-lg px-4 py-2 group rounded-xl"
             >
               <Phone className="mr-2 w-5 h-5" />

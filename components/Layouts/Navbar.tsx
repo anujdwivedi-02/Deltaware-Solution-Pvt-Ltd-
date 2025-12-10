@@ -52,7 +52,7 @@ const Navbar: React.FC = () => {
             <Link
               key={item.path}
               href={item.path}
-              className={`group whitespace-nowrap relative text-md font-medium transition-colors hover:text-cyber ${
+              className={`group pb-2 whitespace-nowrap relative text-md font-medium transition-colors hover:text-cyber ${
                 pathName === item.path ? "text-cyber" : "text-mist"
               }`}
             >

@@ -13,6 +13,7 @@ import {
 } from "lucide-react";
 import AnimateOnView from "@/components/ui/AnimateOnView";
 import Button from "@/components/ui/Button";
+import { motion } from "framer-motion";
 
 export default function AIMLService() {
   const features = [
@@ -82,6 +83,44 @@ export default function AIMLService() {
     },
   ];
 
+  const PROCESS = [
+    {
+      step: "01",
+      title: "Problem Definition",
+      description:
+        "Identifying business challenges that can be solved with AI/ML approaches.",
+    },
+    {
+      step: "02",
+      title: "Data Collection & Preparation",
+      description:
+        "Gathering and cleaning relevant data to train machine learning models.",
+    },
+    {
+      step: "03",
+      title: "Model Development",
+      description:
+        "Building and training custom models using appropriate algorithms and frameworks.",
+    },
+    {
+      step: "04",
+      title: "Testing & Validation",
+      description:
+        "Evaluating model performance and refining for optimal results.",
+    },
+    {
+      step: "05",
+      title: "Deployment",
+      description:
+        "Integrating trained models into production environments and applications.",
+    },
+    {
+      step: "06",
+      title: "Monitoring & Optimization",
+      description:
+        "Continuously tracking performance and improving models over time.",
+    },
+  ];
   return (
     <div className="min-h-screen bg-quantum sm:pt-32 pt-28 pb-12">
       {/* Hero Section */}
@@ -93,18 +132,40 @@ export default function AIMLService() {
         </div>
 
         <div className="container mx-auto px-4 lg:px-8 relative z-10">
-          <div className="max-w-4xl mx-auto text-center">
-            <Badge>AI & MACHINE LEARNING SOLUTIONS</Badge>
-            <h1 className="mt-6 sm:text-5xl text-4xl font-poppins font-extrabold leading-tight text-pure-white">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6 }}
+            className="max-w-4xl mx-auto text-center"
+          >
+            <motion.div
+              initial={{ scale: 0.9, opacity: 0 }}
+              animate={{ scale: 1, opacity: 1 }}
+              transition={{ delay: 0.2, duration: 0.5 }}
+            >
+              <Badge>AI & MACHINE LEARNING SOLUTIONS</Badge>
+            </motion.div>
+            <motion.h1
+              className="mt-6 sm:text-5xl text-4xl font-poppins font-extrabold leading-tight text-pure-white"
+              initial={{ opacity: 0, y: 30 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: 0.3, duration: 0.7 }}
+            >
+              AI/ML {""}
               <Highlight className="bg-ai-gradient text-gradient">
-                AI/ML & Data Science Services
+                & Data Science Services
               </Highlight>
-            </h1>
-            <p className="mt-6 text-xl text-mist max-w-3xl mx-auto font-poppins">
+            </motion.h1>
+            <motion.p
+              className="mt-6 text-xl text-mist max-w-3xl mx-auto font-poppins"
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{ delay: 0.5, duration: 0.8 }}
+            >
               Leverage artificial intelligence and machine learning to transform
               your business with data-driven insights.
-            </p>
-          </div>
+            </motion.p>
+          </motion.div>
         </div>
       </section>
 
@@ -113,24 +174,59 @@ export default function AIMLService() {
         <div className="absolute inset-0 bg-cyber-grid bg-grid opacity-5"></div>
         <div className="container mx-auto px-4 lg:px-8 relative z-10">
           <div className="grid lg:grid-cols-2 gap-12 items-center">
-            <div className="animate-fade-up">
-              <h2 className="text-3xl md:text-4xl font-poppins font-bold text-pure-white mb-6">
+            <motion.div
+              initial={{ opacity: 0, x: -50 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.7, ease: "easeOut" }}
+            >
+              <motion.h2
+                className="text-3xl md:text-4xl font-poppins font-bold text-pure-white mb-6"
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: 0.2, duration: 0.5 }}
+              >
                 Unlocking Business Potential with AI
-              </h2>
-              <p className="text-lg text-mist font-poppins mb-6">
+              </motion.h2>
+              <motion.p
+                className="text-lg text-mist font-poppins mb-6"
+                initial={{ opacity: 0 }}
+                whileInView={{ opacity: 1 }}
+                viewport={{ once: true }}
+                transition={{ delay: 0.3, duration: 0.6 }}
+              >
                 Our AI/ML services harness the power of data to create
                 intelligent systems that learn, adapt, and drive business value.
                 From predictive analytics to computer vision, we build solutions
                 that transform how organizations operate.
-              </p>
-              <p className="text-lg text-mist font-poppins">
+              </motion.p>
+              <motion.p
+                className="text-lg text-mist font-poppins"
+                initial={{ opacity: 0 }}
+                whileInView={{ opacity: 1 }}
+                viewport={{ once: true }}
+                transition={{ delay: 0.4, duration: 0.6 }}
+              >
                 With expertise in the latest machine learning frameworks and
                 algorithms, our data scientists develop custom solutions that
                 solve real-world problems and create competitive advantages.
-              </p>
-            </div>
-            <div className="animate-fade-up">
-              <div className="relative rounded-2xl overflow-hidden border cyber-border">
+              </motion.p>
+            </motion.div>
+            <motion.div
+              initial={{ opacity: 0, x: 50 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.7, ease: "easeOut" }}
+              whileHover={{ scale: 1.02 }}
+              className="relative rounded-2xl overflow-hidden border cyber-border"
+            >
+              <motion.div
+                initial={{ scale: 1.1, opacity: 0 }}
+                whileInView={{ scale: 1, opacity: 1 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.8 }}
+              >
                 <Image
                   src="/ai-ml.jpg"
                   alt="AI/ML Services"
@@ -138,9 +234,15 @@ export default function AIMLService() {
                   height={400}
                   className="w-full h-auto object-cover"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-quantum-navy to-transparent"></div>
-              </div>
-            </div>
+              </motion.div>
+              <motion.div
+                className="absolute inset-0 bg-gradient-to-t from-quantum-navy to-transparent"
+                initial={{ opacity: 0 }}
+                whileInView={{ opacity: 1 }}
+                viewport={{ once: true }}
+                transition={{ delay: 0.3, duration: 0.7 }}
+              />
+            </motion.div>
           </div>
         </div>
       </section>
@@ -151,32 +253,82 @@ export default function AIMLService() {
         <div className="absolute top-1/4 right-0 w-96 h-96 bg-ai-violet/20 rounded-full blur-3xl"></div>
 
         <div className="container mx-auto px-4 lg:px-8 relative z-10">
-          <div className="text-center mb-16">
-            <h2 className="text-3xl md:text-4xl font-poppins font-bold text-pure-white mb-4">
+          <motion.div
+            className="text-center mb-16"
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6 }}
+          >
+            <motion.h2
+              className="text-3xl md:text-4xl font-poppins font-bold text-pure-white mb-4"
+              initial={{ opacity: 0 }}
+              whileInView={{ opacity: 1 }}
+              viewport={{ once: true }}
+              transition={{ delay: 0.2 }}
+            >
               Our <span className="bg-ai-gradient text-gradient">AI/ML</span>{" "}
               Services
-            </h2>
-            <p className="text-lg text-mist max-w-3xl mx-auto font-poppins">
+            </motion.h2>
+            <motion.p
+              className="text-lg text-mist max-w-3xl mx-auto font-poppins"
+              initial={{ opacity: 0 }}
+              whileInView={{ opacity: 1 }}
+              viewport={{ once: true }}
+              transition={{ delay: 0.3 }}
+            >
               Cutting-edge artificial intelligence solutions tailored to your
               business needs
-            </p>
-          </div>
+            </motion.p>
+          </motion.div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {features.map((feature, index) => (
-              <div
+              <motion.div
                 key={index}
-                className="group p-6 rounded-2xl bg-carbon border cyber-border hover:border-cyber-teal transition-all duration-300 hover:scale-105 card-glow-hover animate-fade-up"
-                style={{ animationDelay: `${index * 100}ms` }}
+                className="group p-6 rounded-2xl bg-carbon border cyber-border hover:border-cyber-teal transition-all duration-300 hover:scale-105 card-glow-hover"
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: index * 0.1, duration: 0.5 }}
+                whileHover={{
+                  y: -10,
+                  boxShadow:
+                    "0 20px 25px -5px rgba(0, 0, 0, 0.3), 0 10px 10px -5px rgba(0, 0, 0, 0.2)",
+                }}
               >
-                <div className="inline-flex p-3 rounded-xl bg-gradient-to-br from-neural-blue to-ai-violet mb-4 group-hover:scale-110 transition-transform duration-300">
-                  <div className="text-white">{feature.icon}</div>
-                </div>
-                <h3 className="text-xl font-orbitron font-bold text-pure-white mb-3 group-hover:text-cyber-teal transition-colors">
+                <motion.div
+                  className="inline-flex p-3 rounded-xl bg-gradient-to-br from-neural-blue to-ai-violet mb-4 group-hover:scale-110 transition-transform duration-300"
+                  whileHover={{ scale: 1.1, rotate: 5 }}
+                  transition={{ type: "spring", stiffness: 300 }}
+                >
+                  <motion.div
+                    className="text-white"
+                    whileHover={{ scale: 1.2 }}
+                    transition={{ type: "spring", stiffness: 400 }}
+                  >
+                    {feature.icon}
+                  </motion.div>
+                </motion.div>
+                <motion.h3
+                  className="text-xl font-orbitron font-bold text-pure-white mb-3 group-hover:text-cyber-teal transition-colors"
+                  initial={{ opacity: 0 }}
+                  whileInView={{ opacity: 1 }}
+                  viewport={{ once: true }}
+                  transition={{ delay: 0.1 }}
+                >
                   {feature.title}
-                </h3>
-                <p className="text-mist font-poppins">{feature.description}</p>
-              </div>
+                </motion.h3>
+                <motion.p
+                  className="text-mist font-poppins"
+                  initial={{ opacity: 0 }}
+                  whileInView={{ opacity: 1 }}
+                  viewport={{ once: true }}
+                  transition={{ delay: 0.2 }}
+                >
+                  {feature.description}
+                </motion.p>
+              </motion.div>
             ))}
           </div>
         </div>
@@ -186,31 +338,69 @@ export default function AIMLService() {
       <section className="py-16 bg-quantum-navy relative overflow-hidden">
         <div className="absolute inset-0 bg-cyber-grid bg-grid opacity-5"></div>
         <div className="container mx-auto px-4 lg:px-8 relative z-10">
-          <div className="text-center mb-16">
-            <h2 className="text-3xl md:text-4xl font-poppins font-bold text-pure-white mb-4">
+          <motion.div
+            className="text-center mb-16"
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6 }}
+          >
+            <motion.h2
+              className="text-3xl md:text-4xl font-poppins font-bold text-pure-white mb-4"
+              initial={{ opacity: 0 }}
+              whileInView={{ opacity: 1 }}
+              viewport={{ once: true }}
+              transition={{ delay: 0.2 }}
+            >
               Real-World{" "}
               <span className="bg-ai-gradient text-gradient">Applications</span>
-            </h2>
-            <p className="text-lg text-mist max-w-3xl mx-auto font-poppins">
+            </motion.h2>
+            <motion.p
+              className="text-lg text-mist max-w-3xl mx-auto font-poppins"
+              initial={{ opacity: 0 }}
+              whileInView={{ opacity: 1 }}
+              viewport={{ once: true }}
+              transition={{ delay: 0.3 }}
+            >
               Industries transforming through artificial intelligence and
               machine learning
-            </p>
-          </div>
+            </motion.p>
+          </motion.div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             {applications.map((application, index) => (
-              <div
+              <motion.div
                 key={index}
-                className="p-6 rounded-2xl bg-carbon border cyber-border hover:border-cyber-teal transition-all duration-300 animate-fade-up"
-                style={{ animationDelay: `${index * 100}ms` }}
+                className="p-6 rounded-2xl bg-carbon border cyber-border hover:border-cyber-teal transition-all duration-300"
+                initial={{ opacity: 0, scale: 0.9 }}
+                whileInView={{ opacity: 1, scale: 1 }}
+                viewport={{ once: true }}
+                transition={{ delay: index * 0.1, duration: 0.5 }}
+                whileHover={{
+                  y: -5,
+                  scale: 1.03,
+                  boxShadow: "0 10px 20px -5px rgba(0, 0, 0, 0.3)",
+                }}
               >
-                <h3 className="text-xl font-orbitron font-bold text-pure-white mb-3">
+                <motion.h3
+                  className="text-xl font-orbitron font-bold text-pure-white mb-3"
+                  initial={{ opacity: 0, x: -20 }}
+                  whileInView={{ opacity: 1, x: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ delay: 0.1 }}
+                >
                   {application.title}
-                </h3>
-                <p className="text-mist font-poppins">
+                </motion.h3>
+                <motion.p
+                  className="text-mist font-poppins"
+                  initial={{ opacity: 0 }}
+                  whileInView={{ opacity: 1 }}
+                  viewport={{ once: true }}
+                  transition={{ delay: 0.2 }}
+                >
                   {application.description}
-                </p>
-              </div>
+                </motion.p>
+              </motion.div>
             ))}
           </div>
         </div>
@@ -220,76 +410,88 @@ export default function AIMLService() {
       <section className="py-16 relative overflow-hidden">
         <div className="absolute inset-0 bg-cyber-grid bg-grid opacity-5"></div>
         <div className="container mx-auto px-4 lg:px-8 relative z-10">
-          <div className="max-w-4xl mx-auto">
-            <div className="text-center mb-12">
-              <h2 className="text-3xl md:text-4xl font-poppins font-bold text-pure-white mb-4">
+          <motion.div
+            className="max-w-4xl mx-auto"
+            initial={{ opacity: 0 }}
+            whileInView={{ opacity: 1 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6 }}
+          >
+            <motion.div
+              className="text-center mb-12"
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.5 }}
+            >
+              <motion.h2
+                className="text-3xl md:text-4xl font-poppins font-bold text-pure-white mb-4"
+                initial={{ opacity: 0 }}
+                whileInView={{ opacity: 1 }}
+                viewport={{ once: true }}
+                transition={{ delay: 0.2 }}
+              >
                 Our AI Development{" "}
                 <span className="bg-ai-gradient text-gradient">Process</span>
-              </h2>
-              <p className="text-lg text-mist max-w-2xl mx-auto font-poppins">
+              </motion.h2>
+              <motion.p
+                className="text-lg text-mist max-w-2xl mx-auto font-poppins"
+                initial={{ opacity: 0 }}
+                whileInView={{ opacity: 1 }}
+                viewport={{ once: true }}
+                transition={{ delay: 0.3 }}
+              >
                 A systematic approach to delivering intelligent solutions
-              </p>
-            </div>
+              </motion.p>
+            </motion.div>
 
             <div className="space-y-8">
-              {[
-                {
-                  step: "01",
-                  title: "Problem Definition",
-                  description:
-                    "Identifying business challenges that can be solved with AI/ML approaches.",
-                },
-                {
-                  step: "02",
-                  title: "Data Collection & Preparation",
-                  description:
-                    "Gathering and cleaning relevant data to train machine learning models.",
-                },
-                {
-                  step: "03",
-                  title: "Model Development",
-                  description:
-                    "Building and training custom models using appropriate algorithms and frameworks.",
-                },
-                {
-                  step: "04",
-                  title: "Testing & Validation",
-                  description:
-                    "Evaluating model performance and refining for optimal results.",
-                },
-                {
-                  step: "05",
-                  title: "Deployment",
-                  description:
-                    "Integrating trained models into production environments and applications.",
-                },
-                {
-                  step: "06",
-                  title: "Monitoring & Optimization",
-                  description:
-                    "Continuously tracking performance and improving models over time.",
-                },
-              ].map((item, index) => (
-                <div
+              {PROCESS.map((item, index) => (
+                <motion.div
                   key={index}
-                  className="flex animate-fade-up"
-                  style={{ animationDelay: `${index * 100}ms` }}
+                  className="flex"
+                  initial={{ opacity: 0, x: -30 }}
+                  whileInView={{ opacity: 1, x: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ delay: index * 0.1, duration: 0.5 }}
+                  whileHover={{ x: 10 }}
                 >
-                  <div className="flex-shrink-0 w-16 h-16 rounded-full bg-gradient-to-br from-neural-blue to-ai-violet flex items-center justify-center mr-6">
-                    <span className="text-pure-white font-orbitron font-bold">
+                  <motion.div
+                    className="flex-shrink-0 w-16 h-16 rounded-full bg-gradient-to-br from-neural-blue to-ai-violet flex items-center justify-center mr-6"
+                    whileHover={{ scale: 1.1, rotate: 5 }}
+                    transition={{ type: "spring", stiffness: 300 }}
+                  >
+                    <motion.span
+                      className="text-pure-white font-orbitron font-bold"
+                      whileHover={{ scale: 1.1 }}
+                    >
                       {item.step}
-                    </span>
-                  </div>
-                  <div>
-                    <h3 className="text-xl font-orbitron font-bold text-pure-white mb-2">
+                    </motion.span>
+                  </motion.div>
+                  <motion.div>
+                    <motion.h3
+                      className="text-xl font-orbitron font-bold text-pure-white mb-2"
+                      initial={{ opacity: 0 }}
+                      whileInView={{ opacity: 1 }}
+                      viewport={{ once: true }}
+                      transition={{ delay: 0.1 }}
+                    >
                       {item.title}
-                    </h3>
-                    <p className="text-mist font-poppins">{item.description}</p>
-                  </div>
-                </div>
+                    </motion.h3>
+                    <motion.p
+                      className="text-mist font-poppins"
+                      initial={{ opacity: 0 }}
+                      whileInView={{ opacity: 1 }}
+                      viewport={{ once: true }}
+                      transition={{ delay: 0.2 }}
+                    >
+                      {item.description}
+                    </motion.p>
+                  </motion.div>
+                </motion.div>
               ))}
             </div>
-          </div>
+          </motion.div>
         </div>
       </section>
 

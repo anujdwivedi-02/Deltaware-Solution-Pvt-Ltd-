@@ -64,8 +64,8 @@ const Footer: React.FC = () => {
   ];
 
   const legalLinks = [
-    { href: "/legal", label: "Privacy Policy" },
-    { href: "/legal", label: "Terms of Service" },
+    { href: "/privacy-policy", label: "Privacy Policy" },
+    { href: "/terms-of-service", label: "Terms of Service" },
   ];
   const socialLinks = [
     { icon: <Facebook className="w-5 h-5" />, href: "#", label: "Facebook" },
@@ -95,7 +95,7 @@ const Footer: React.FC = () => {
                 <div className="h-full w-full absolute inset-0"></div>
               </div>
               <div className="flex flex-col">
-                <span className="text-2xl font-heading font-bold text-white leading-none">
+                <span className="text-2xl font-fira-code font-heading font-bold text-white leading-none">
                   DELTAWARE
                 </span>
                 <span className="text-[12px] font-fira-code text-mist tracking-widest">

@@ -13,6 +13,7 @@ import {
 } from "lucide-react";
 import AnimateOnView from "@/components/ui/AnimateOnView";
 import Button from "@/components/ui/Button";
+import { motion } from "framer-motion";
 
 export default function InternshipsService() {
   const features = [
@@ -81,6 +82,43 @@ export default function InternshipsService() {
     },
   ];
 
+  const process = [
+    {
+      step: "01",
+      title: "Application & Screening",
+      description:
+        "Submit your application and go through our initial screening process.",
+    },
+    {
+      step: "02",
+      title: "Technical Assessment",
+      description:
+        "Complete a skills assessment to determine the best program fit.",
+    },
+    {
+      step: "03",
+      title: "Interview",
+      description: "Meet with our team to discuss your goals and expectations.",
+    },
+    {
+      step: "04",
+      title: "Program Assignment",
+      description: "Get matched with a suitable internship program and mentor.",
+    },
+    {
+      step: "05",
+      title: "Hands-On Training",
+      description:
+        "Begin working on real projects with guidance from your mentor.",
+    },
+    {
+      step: "06",
+      title: "Placement Support",
+      description:
+        "Receive assistance with job applications and interview preparation.",
+    },
+  ];
+
   return (
     <div className="min-h-screen bg-quantum sm:pt-32 pt-28 pb-12">
       {/* Hero Section */}
@@ -92,19 +130,40 @@ export default function InternshipsService() {
         </div>
 
         <div className="container mx-auto px-4 lg:px-8 relative z-10">
-          <div className="max-w-4xl mx-auto text-center">
-            <Badge>INTERNSHIPS & JOB ASSISTANCE</Badge>
-            <h1 className="mt-6 sm:text-5xl text-4xl font-poppins font-extrabold leading-tight text-pure-white">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6 }}
+            className="max-w-4xl mx-auto text-center"
+          >
+            <motion.div
+              initial={{ scale: 0.9, opacity: 0 }}
+              animate={{ scale: 1, opacity: 1 }}
+              transition={{ delay: 0.2, duration: 0.5 }}
+            >
+              <Badge>INTERNSHIPS & JOB ASSISTANCE</Badge>
+            </motion.div>
+            <motion.h1
+              className="mt-6 sm:text-5xl text-4xl font-poppins font-extrabold leading-tight text-pure-white"
+              initial={{ opacity: 0, y: 30 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: 0.3, duration: 0.7 }}
+            >
               Internships {""}
               <Highlight className="bg-ai-gradient text-gradient">
                 & Job Assistance
               </Highlight>
-            </h1>
-            <p className="mt-6 text-xl text-mist max-w-3xl mx-auto font-poppins">
+            </motion.h1>
+            <motion.p
+              className="mt-6 text-xl text-mist max-w-3xl mx-auto font-poppins"
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{ delay: 0.5, duration: 0.8 }}
+            >
               Launch your tech career with hands-on experience and dedicated
               placement support.
-            </p>
-          </div>
+            </motion.p>
+          </motion.div>
         </div>
       </section>
 
@@ -113,26 +172,61 @@ export default function InternshipsService() {
         <div className="absolute inset-0 bg-cyber-grid bg-grid opacity-5"></div>
         <div className="container mx-auto px-4 lg:px-8 relative z-10">
           <div className="grid lg:grid-cols-2 gap-12 items-center">
-            <div className="animate-fade-up">
-              <h2 className="text-3xl md:text-4xl font-poppins font-bold text-pure-white mb-6">
+            <motion.div
+              initial={{ opacity: 0, x: -50 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.7, ease: "easeOut" }}
+            >
+              <motion.h2
+                className="text-3xl md:text-4xl font-poppins font-bold text-pure-white mb-6"
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: 0.2, duration: 0.5 }}
+              >
                 Bridging Education and Industry
-              </h2>
-              <p className="text-lg text-mist font-poppins mb-6">
+              </motion.h2>
+              <motion.p
+                className="text-lg text-mist font-poppins mb-6"
+                initial={{ opacity: 0 }}
+                whileInView={{ opacity: 1 }}
+                viewport={{ once: true }}
+                transition={{ delay: 0.3, duration: 0.6 }}
+              >
                 Our internship program is designed to provide students and fresh
                 graduates with valuable industry experience while working on
                 real projects. We connect talented individuals with
                 opportunities to grow their skills and launch successful careers
                 in technology.
-              </p>
-              <p className="text-lg text-mist font-poppins">
+              </motion.p>
+              <motion.p
+                className="text-lg text-mist font-poppins"
+                initial={{ opacity: 0 }}
+                whileInView={{ opacity: 1 }}
+                viewport={{ once: true }}
+                transition={{ delay: 0.4, duration: 0.6 }}
+              >
                 With our comprehensive support system, including mentorship,
                 skill development, and job placement assistance, interns gain
                 the confidence and experience needed to excel in the competitive
                 tech job market.
-              </p>
-            </div>
-            <div className="animate-fade-up">
-              <div className="relative rounded-2xl overflow-hidden border cyber-border">
+              </motion.p>
+            </motion.div>
+            <motion.div
+              initial={{ opacity: 0, x: 50 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.7, ease: "easeOut" }}
+              whileHover={{ scale: 1.02 }}
+              className="relative rounded-2xl overflow-hidden border cyber-border"
+            >
+              <motion.div
+                initial={{ scale: 1.1, opacity: 0 }}
+                whileInView={{ scale: 1, opacity: 1 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.8 }}
+              >
                 <Image
                   src="/internships.jpg"
                   alt="Internships & Job Assistance"
@@ -140,9 +234,15 @@ export default function InternshipsService() {
                   height={400}
                   className="w-full h-auto object-cover"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-quantum-navy to-transparent"></div>
-              </div>
-            </div>
+              </motion.div>
+              <motion.div
+                className="absolute inset-0 bg-gradient-to-t from-quantum-navy to-transparent"
+                initial={{ opacity: 0 }}
+                whileInView={{ opacity: 1 }}
+                viewport={{ once: true }}
+                transition={{ delay: 0.3, duration: 0.7 }}
+              />
+            </motion.div>
           </div>
         </div>
       </section>
@@ -153,34 +253,84 @@ export default function InternshipsService() {
         <div className="absolute top-1/4 right-0 w-96 h-96 bg-ai-violet/20 rounded-full blur-3xl"></div>
 
         <div className="container mx-auto px-4 lg:px-8 relative z-10">
-          <div className="text-center mb-16">
-            <h2 className="text-3xl md:text-4xl font-poppins font-bold text-pure-white mb-4">
+          <motion.div
+            className="text-center mb-16"
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6 }}
+          >
+            <motion.h2
+              className="text-3xl md:text-4xl font-poppins font-bold text-pure-white mb-4"
+              initial={{ opacity: 0 }}
+              whileInView={{ opacity: 1 }}
+              viewport={{ once: true }}
+              transition={{ delay: 0.2 }}
+            >
               Internship{" "}
               <span className="bg-ai-gradient text-gradient">
                 Program Features
               </span>
-            </h2>
-            <p className="text-lg text-mist max-w-3xl mx-auto font-poppins">
+            </motion.h2>
+            <motion.p
+              className="text-lg text-mist max-w-3xl mx-auto font-poppins"
+              initial={{ opacity: 0 }}
+              whileInView={{ opacity: 1 }}
+              viewport={{ once: true }}
+              transition={{ delay: 0.3 }}
+            >
               Comprehensive support to ensure your success in the program and
               beyond
-            </p>
-          </div>
+            </motion.p>
+          </motion.div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {features.map((feature, index) => (
-              <div
+              <motion.div
                 key={index}
-                className="group p-6 rounded-2xl bg-carbon border cyber-border hover:border-cyber-teal transition-all duration-300 hover:scale-105 card-glow-hover animate-fade-up"
-                style={{ animationDelay: `${index * 100}ms` }}
+                className="group p-6 rounded-2xl bg-carbon border cyber-border hover:border-cyber-teal transition-all duration-300 hover:scale-105 card-glow-hover"
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: index * 0.1, duration: 0.5 }}
+                whileHover={{
+                  y: -10,
+                  boxShadow:
+                    "0 20px 25px -5px rgba(0, 0, 0, 0.3), 0 10px 10px -5px rgba(0, 0, 0, 0.2)",
+                }}
               >
-                <div className="inline-flex p-3 rounded-xl bg-gradient-to-br from-neon-magenta to-cyber-teal mb-4 group-hover:scale-110 transition-transform duration-300">
-                  <div className="text-white">{feature.icon}</div>
-                </div>
-                <h3 className="text-xl font-orbitron font-bold text-pure-white mb-3 group-hover:text-cyber-teal transition-colors">
+                <motion.div
+                  className="inline-flex p-3 rounded-xl bg-gradient-to-br from-neon-magenta to-cyber-teal mb-4 group-hover:scale-110 transition-transform duration-300"
+                  whileHover={{ scale: 1.1, rotate: 5 }}
+                  transition={{ type: "spring", stiffness: 300 }}
+                >
+                  <motion.div
+                    className="text-white"
+                    whileHover={{ scale: 1.2 }}
+                    transition={{ type: "spring", stiffness: 400 }}
+                  >
+                    {feature.icon}
+                  </motion.div>
+                </motion.div>
+                <motion.h3
+                  className="text-xl font-orbitron font-bold text-pure-white mb-3 group-hover:text-cyber-teal transition-colors"
+                  initial={{ opacity: 0 }}
+                  whileInView={{ opacity: 1 }}
+                  viewport={{ once: true }}
+                  transition={{ delay: 0.1 }}
+                >
                   {feature.title}
-                </h3>
-                <p className="text-mist font-poppins">{feature.description}</p>
-              </div>
+                </motion.h3>
+                <motion.p
+                  className="text-mist font-poppins"
+                  initial={{ opacity: 0 }}
+                  whileInView={{ opacity: 1 }}
+                  viewport={{ once: true }}
+                  transition={{ delay: 0.2 }}
+                >
+                  {feature.description}
+                </motion.p>
+              </motion.div>
             ))}
           </div>
         </div>
@@ -190,35 +340,84 @@ export default function InternshipsService() {
       <section className="py-16 bg-quantum-navy relative overflow-hidden">
         <div className="absolute inset-0 bg-cyber-grid bg-grid opacity-5"></div>
         <div className="container mx-auto px-4 lg:px-8 relative z-10">
-          <div className="text-center mb-16">
-            <h2 className="text-3xl md:text-4xl font-poppins font-bold text-pure-white mb-4">
+          <motion.div
+            className="text-center mb-16"
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6 }}
+          >
+            <motion.h2
+              className="text-3xl md:text-4xl font-poppins font-bold text-pure-white mb-4"
+              initial={{ opacity: 0 }}
+              whileInView={{ opacity: 1 }}
+              viewport={{ once: true }}
+              transition={{ delay: 0.2 }}
+            >
               Available{" "}
               <span className="bg-ai-gradient text-gradient">
                 Internship Programs
               </span>
-            </h2>
-            <p className="text-lg text-mist max-w-3xl mx-auto font-poppins">
+            </motion.h2>
+            <motion.p
+              className="text-lg text-mist max-w-3xl mx-auto font-poppins"
+              initial={{ opacity: 0 }}
+              whileInView={{ opacity: 1 }}
+              viewport={{ once: true }}
+              transition={{ delay: 0.3 }}
+            >
               Specialized tracks to match your interests and career goals
-            </p>
-          </div>
+            </motion.p>
+          </motion.div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
             {programs.map((program, index) => (
-              <div
+              <motion.div
                 key={index}
-                className="p-6 rounded-2xl bg-carbon border cyber-border hover:border-cyber-teal transition-all duration-300 animate-fade-up"
-                style={{ animationDelay: `${index * 100}ms` }}
+                className="p-6 rounded-2xl bg-carbon border cyber-border hover:border-cyber-teal transition-all duration-300"
+                initial={{ opacity: 0, scale: 0.9 }}
+                whileInView={{ opacity: 1, scale: 1 }}
+                viewport={{ once: true }}
+                transition={{ delay: index * 0.1, duration: 0.5 }}
+                whileHover={{
+                  y: -5,
+                  scale: 1.03,
+                  boxShadow: "0 10px 20px -5px rgba(0, 0, 0, 0.3)",
+                }}
               >
-                <div className="flex justify-between items-start mb-4">
-                  <h3 className="text-xl font-orbitron font-bold text-pure-white">
+                <motion.div
+                  className="flex justify-between items-start mb-4"
+                  initial={{ opacity: 0 }}
+                  whileInView={{ opacity: 1 }}
+                  viewport={{ once: true }}
+                  transition={{ delay: 0.1 }}
+                >
+                  <motion.h3
+                    className="text-xl font-orbitron font-bold text-pure-white"
+                    initial={{ opacity: 0, x: -20 }}
+                    whileInView={{ opacity: 1, x: 0 }}
+                    viewport={{ once: true }}
+                    transition={{ delay: 0.2 }}
+                  >
                     {program.title}
-                  </h3>
-                  <span className="text-cyber-teal font-poppins text-sm bg-carbon/50 px-3 py-1 rounded-full">
+                  </motion.h3>
+                  <motion.span
+                    className="text-cyber-teal font-poppins text-sm bg-carbon/50 px-3 py-1 rounded-full"
+                    whileHover={{ scale: 1.1 }}
+                  >
                     {program.duration}
-                  </span>
-                </div>
-                <p className="text-mist font-poppins">{program.description}</p>
-              </div>
+                  </motion.span>
+                </motion.div>
+                <motion.p
+                  className="text-mist font-poppins"
+                  initial={{ opacity: 0 }}
+                  whileInView={{ opacity: 1 }}
+                  viewport={{ once: true }}
+                  transition={{ delay: 0.3 }}
+                >
+                  {program.description}
+                </motion.p>
+              </motion.div>
             ))}
           </div>
         </div>
@@ -228,76 +427,88 @@ export default function InternshipsService() {
       <section className="py-16 relative overflow-hidden">
         <div className="absolute inset-0 bg-cyber-grid bg-grid opacity-5"></div>
         <div className="container mx-auto px-4 lg:px-8 relative z-10">
-          <div className="max-w-4xl mx-auto">
-            <div className="text-center mb-12">
-              <h2 className="text-3xl md:text-4xl font-poppins font-bold text-pure-white mb-4">
+          <motion.div
+            className="max-w-4xl mx-auto"
+            initial={{ opacity: 0 }}
+            whileInView={{ opacity: 1 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6 }}
+          >
+            <motion.div
+              className="text-center mb-12"
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.5 }}
+            >
+              <motion.h2
+                className="text-3xl md:text-4xl font-poppins font-bold text-pure-white mb-4"
+                initial={{ opacity: 0 }}
+                whileInView={{ opacity: 1 }}
+                viewport={{ once: true }}
+                transition={{ delay: 0.2 }}
+              >
                 Internship{" "}
                 <span className="bg-ai-gradient text-gradient">Process</span>
-              </h2>
-              <p className="text-lg text-mist max-w-2xl mx-auto font-poppins">
+              </motion.h2>
+              <motion.p
+                className="text-lg text-mist max-w-2xl mx-auto font-poppins"
+                initial={{ opacity: 0 }}
+                whileInView={{ opacity: 1 }}
+                viewport={{ once: true }}
+                transition={{ delay: 0.3 }}
+              >
                 A streamlined approach to launching your tech career
-              </p>
-            </div>
+              </motion.p>
+            </motion.div>
 
             <div className="space-y-8">
-              {[
-                {
-                  step: "01",
-                  title: "Application & Screening",
-                  description:
-                    "Submit your application and go through our initial screening process.",
-                },
-                {
-                  step: "02",
-                  title: "Technical Assessment",
-                  description:
-                    "Complete a skills assessment to determine the best program fit.",
-                },
-                {
-                  step: "03",
-                  title: "Interview",
-                  description:
-                    "Meet with our team to discuss your goals and expectations.",
-                },
-                {
-                  step: "04",
-                  title: "Program Assignment",
-                  description:
-                    "Get matched with a suitable internship program and mentor.",
-                },
-                {
-                  step: "05",
-                  title: "Hands-On Training",
-                  description:
-                    "Begin working on real projects with guidance from your mentor.",
-                },
-                {
-                  step: "06",
-                  title: "Placement Support",
-                  description:
-                    "Receive assistance with job applications and interview preparation.",
-                },
-              ].map((item, index) => (
-                <div
+              {process.map((item, index) => (
+                <motion.div
                   key={index}
-                  className="flex animate-fade-up"
-                  style={{ animationDelay: `${index * 100}ms` }}
+                  className="flex"
+                  initial={{ opacity: 0, x: -30 }}
+                  whileInView={{ opacity: 1, x: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ delay: index * 0.1, duration: 0.5 }}
+                  whileHover={{ x: 10 }}
                 >
-                  <div className="flex-shrink-0 w-16 h-16 rounded-full bg-gradient-to-br from-neon-magenta to-cyber-teal flex items-center justify-center mr-6">
-                    <span className="text-pure-white font-orbitron font-bold">
+                  <motion.div
+                    className="flex-shrink-0 w-16 h-16 rounded-full bg-gradient-to-br from-neon-magenta to-cyber-teal flex items-center justify-center mr-6"
+                    whileHover={{ scale: 1.1, rotate: 5 }}
+                    transition={{ type: "spring", stiffness: 300 }}
+                  >
+                    <motion.span
+                      className="text-pure-white font-orbitron font-bold"
+                      whileHover={{ scale: 1.1 }}
+                    >
                       {item.step}
-                    </span>
-                  </div>
-                  <div>
-                    <h3 className="text-xl font-orbitron font-bold text-pure-white mb-2">
+                    </motion.span>
+                  </motion.div>
+                  <motion.div>
+                    <motion.h3
+                      className="text-xl font-orbitron font-bold text-pure-white mb-2"
+                      initial={{ opacity: 0 }}
+                      whileInView={{ opacity: 1 }}
+                      viewport={{ once: true }}
+                      transition={{ delay: 0.1 }}
+                    >
                       {item.title}
-                    </h3>
-                    <p className="text-mist font-poppins">{item.description}</p>
-                  </div>
-                </div>
+                    </motion.h3>
+                    <motion.p
+                      className="text-mist font-poppins"
+                      initial={{ opacity: 0 }}
+                      whileInView={{ opacity: 1 }}
+                      viewport={{ once: true }}
+                      transition={{ delay: 0.2 }}
+                    >
+                      {item.description}
+                    </motion.p>
+                  </motion.div>
+                </motion.div>
               ))}
             </div>
-          </div>
+          </motion.div>
         </div>
       </section>
 
