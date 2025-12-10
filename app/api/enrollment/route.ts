@@ -1,5 +1,6 @@
 import { NextResponse } from "next/server";
 import { insertEnrollmentForm } from "@/lib/databaseService";
+import { sendAdminEmail, sendUserConfirmationEmail } from "@/lib/emailService";
 
 export async function POST(request: Request) {
   try {
@@ -29,6 +30,28 @@ export async function POST(request: Request) {
 
     if (result.success) {
       console.log("Successfully processed enrollment form submission");
+
+      // Send emails asynchronously (don't wait for them to complete)
+      sendAdminEmail(body, "enrollment")
+        .then((res) => {
+          if (!res.success) {
+            console.error("Failed to send admin email:", res.error);
+          }
+        })
+        .catch((error) => {
+          console.error("Error sending admin email:", error);
+        });
+
+      sendUserConfirmationEmail(body, "enrollment")
+        .then((res) => {
+          if (!res.success) {
+            console.error("Failed to send user confirmation email:", res.error);
+          }
+        })
+        .catch((error) => {
+          console.error("Error sending user confirmation email:", error);
+        });
+
       return NextResponse.json(
         { success: true, data: result.data },
         { status: 201 }

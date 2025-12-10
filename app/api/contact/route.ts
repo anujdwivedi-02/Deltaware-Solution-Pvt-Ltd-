@@ -1,16 +1,18 @@
-import { NextResponse } from 'next/server';
-import { insertContactForm } from '@/lib/databaseService';
+import { NextResponse } from "next/server";
+import { insertContactForm } from "@/lib/databaseService";
+import { sendAdminEmail, sendUserConfirmationEmail } from "@/lib/emailService";
 
 export async function POST(request: Request) {
   try {
     const body = await request.json();
-    
-    console.log('Received contact form submission:', body);
-    
+
     // Validate required fields
     if (!body.name || !body.email || !body.message) {
       return NextResponse.json(
-        { error: 'Missing required fields: name, email, and message are required' },
+        {
+          error:
+            "Missing required fields: name, email, and message are required",
+        },
         { status: 400 }
       );
     }
@@ -20,20 +22,43 @@ export async function POST(request: Request) {
       name: body.name,
       email: body.email,
       phone: body.phone,
-      message: body.message
+      message: body.message,
     });
 
     if (result.success) {
-      console.log('Successfully processed contact form submission');
-      return NextResponse.json({ success: true, data: result.data }, { status: 201 });
+      // Send emails asynchronously (don't wait for them to complete)
+      sendAdminEmail(body, "contact")
+        .then((res) => {
+          if (!res.success) {
+            console.error("Failed to send admin email:", res.error);
+          }
+        })
+        .catch((error) => {
+          console.error("Error sending admin email:", error);
+        });
+
+      sendUserConfirmationEmail(body, "contact")
+        .then((res) => {
+          if (!res.success) {
+            console.error("Failed to send user confirmation email:", res.error);
+          }
+        })
+        .catch((error) => {
+          console.error("Error sending user confirmation email:", error);
+        });
+
+      return NextResponse.json(
+        { success: true, data: result.data },
+        { status: 201 }
+      );
     } else {
-      console.error('Failed to process contact form submission:', result.error);
+      console.error("Failed to process contact form submission:", result.error);
       return NextResponse.json({ error: result.error }, { status: 500 });
     }
   } catch (error: any) {
-    console.error('API Error in contact form submission:', error);
+    console.error("API Error in contact form submission:", error);
     return NextResponse.json(
-      { error: error.message || 'An unexpected error occurred' },
+      { error: error.message || "An unexpected error occurred" },
       { status: 500 }
     );
   }

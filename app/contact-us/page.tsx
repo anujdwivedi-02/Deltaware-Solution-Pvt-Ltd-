@@ -6,7 +6,7 @@ import AnimateOnView from "@/components/ui/AnimateOnView";
 import Button from "@/components/ui/Button";
 import { contactForm } from "@/lib/formvalidation";
 import { formFields, contactInfo, whyChooseUs } from "@/lib/constants";
-import { insertContactForm } from "@/lib/databaseService";
+import { submitContactForm } from "@/lib/apiClient";
 import { useState, useEffect } from "react";
 
 // Define the form values type
@@ -48,7 +48,7 @@ export default function ContactUs() {
       setSubmitSuccess(false);
 
       try {
-        const result = await insertContactForm({
+        const result = await submitContactForm({
           name: values.name,
           email: values.email,
           phone: values.phone,

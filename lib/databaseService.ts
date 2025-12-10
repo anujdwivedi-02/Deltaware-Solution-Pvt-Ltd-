@@ -76,8 +76,6 @@ export async function insertContactForm(formData: ContactFormData) {
       created_at: new Date(),
     };
 
-    console.log("Attempting to insert contact form data:", dataToInsert);
-
     // Insert data into Supabase
     const { data, error } = await supabase
       .from("contact_forms")
@@ -91,8 +89,6 @@ export async function insertContactForm(formData: ContactFormData) {
         error: `${error.message} (Code: ${error.code})`,
       };
     }
-
-    console.log("Successfully inserted contact form data:", data);
 
     return {
       success: true,
