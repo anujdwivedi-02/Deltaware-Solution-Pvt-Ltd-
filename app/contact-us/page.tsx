@@ -6,6 +6,8 @@ import AnimateOnView from "@/components/ui/AnimateOnView";
 import Button from "@/components/ui/Button";
 import { contactForm } from "@/lib/formvalidation";
 import { formFields, contactInfo, whyChooseUs } from "@/lib/constants";
+import { insertContactForm } from "@/lib/databaseService";
+import { useState, useEffect } from "react";
 
 // Define the form values type
 interface FormValues {
@@ -16,6 +18,22 @@ interface FormValues {
 }
 
 export default function ContactUs() {
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [submitSuccess, setSubmitSuccess] = useState(false);
+  const [submitError, setSubmitError] = useState("");
+
+  // Auto-close success/error messages after 5 seconds
+  useEffect(() => {
+    if (submitSuccess || submitError) {
+      const timer = setTimeout(() => {
+        setSubmitSuccess(false);
+        setSubmitError("");
+      }, 5000);
+
+      return () => clearTimeout(timer);
+    }
+  }, [submitSuccess, submitError]);
+
   const formik = useFormik<FormValues>({
     initialValues: {
       name: "",
@@ -24,13 +42,41 @@ export default function ContactUs() {
       message: "",
     },
     validationSchema: contactForm,
-    onSubmit: (values, { setSubmitting, resetForm }) => {
-      console.log("Form submitted:", values);
-      alert("Thank you for your message! We'll get back to you soon.");
-      resetForm();
-      setSubmitting(false);
+    onSubmit: async (values, { setSubmitting, resetForm }) => {
+      setIsSubmitting(true);
+      setSubmitError("");
+      setSubmitSuccess(false);
+
+      try {
+        const result = await insertContactForm({
+          name: values.name,
+          email: values.email,
+          phone: values.phone,
+          message: values.message,
+        });
+
+        if (result.success) {
+          setSubmitSuccess(true);
+          resetForm();
+        } else {
+          // Show more detailed error message
+          const errorMessage =
+            result.error || "Failed to submit form. Please try again.";
+          setSubmitError(errorMessage);
+          console.error("Form submission error:", errorMessage);
+        }
+      } catch (error: any) {
+        const errorMessage =
+          error.message || "An unexpected error occurred. Please try again.";
+        setSubmitError(errorMessage);
+        console.error("Unexpected error:", error);
+      } finally {
+        setIsSubmitting(false);
+        setSubmitting(false);
+      }
     },
   });
+
   return (
     <div className="min-h-screen bg-quantum pt-28 pb-16">
       {/* Hero Section */}
@@ -69,6 +115,18 @@ export default function ContactUs() {
                 <h2 className="text-3xl font-bold text-white mb-6">
                   Send us a Message
                 </h2>
+
+                {submitSuccess && (
+                  <div className="mb-6 p-4 bg-green-900/50 border border-green-500/30 rounded-md text-green-300 animate-fadeIn">
+                    Thank you for your message! We'll get back to you soon.
+                  </div>
+                )}
+
+                {submitError && (
+                  <div className="mb-6 p-4 bg-red-900/50 border border-red-500/30 rounded-md text-red-300 animate-fadeIn">
+                    {submitError}
+                  </div>
+                )}
 
                 <form onSubmit={formik.handleSubmit} className="space-y-6">
                   <div className="grid md:grid-cols-2 gap-6">
@@ -141,11 +199,14 @@ export default function ContactUs() {
                     type="submit"
                     size="lg"
                     disabled={
-                      formik.isSubmitting || !formik.isValid || !formik.dirty
+                      isSubmitting ||
+                      formik.isSubmitting ||
+                      !formik.isValid ||
+                      !formik.dirty
                     }
                     className="disabled:opacity-50 disabled:cursor-not-allowed w-full bg-gradient-accent text-pure-white hover:scale-105 transition-all duration-300 shadow-lg hover:shadow-cyber-teal/50"
                   >
-                    Send Message
+                    {isSubmitting ? "Sending..." : "Send Message"}
                     <Send className="ml-2 w-5 h-5" />
                   </Button>
                 </form>

@@ -8,6 +8,7 @@ import AnimateOnView from "@/components/ui/AnimateOnView";
 import Button from "@/components/ui/Button";
 import { enrollmentForm } from "@/lib/formvalidation";
 import { ENROLL_NOW_COURSES } from "@/lib/constants";
+import { insertEnrollmentForm } from "@/lib/databaseService";
 
 // Define the form values type
 interface FormValues {
@@ -19,6 +20,23 @@ interface FormValues {
 }
 
 export default function EnrollNow() {
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [submitSuccess, setSubmitSuccess] = useState(false);
+  const [submitError, setSubmitError] = useState("");
+  const [currentStep, setCurrentStep] = useState(0);
+
+  // Auto-close success/error messages after 5 seconds
+  useEffect(() => {
+    if (submitSuccess || submitError) {
+      const timer = setTimeout(() => {
+        setSubmitSuccess(false);
+        setSubmitError("");
+      }, 5000);
+
+      return () => clearTimeout(timer);
+    }
+  }, [submitSuccess, submitError]);
+
   const formik = useFormik<FormValues>({
     initialValues: {
       name: "",
@@ -28,15 +46,41 @@ export default function EnrollNow() {
       message: "",
     },
     validationSchema: enrollmentForm,
-    onSubmit: (values, { setSubmitting, resetForm }) => {
-      console.log("Enrollment submitted:", values);
-      alert("Thank you for your enrollment! We'll get back to you soon.");
-      resetForm();
-      setSubmitting(false);
+    onSubmit: async (values, { setSubmitting, resetForm }) => {
+      setIsSubmitting(true);
+      setSubmitError("");
+      setSubmitSuccess(false);
+
+      try {
+        const result = await insertEnrollmentForm({
+          name: values.name,
+          email: values.email,
+          phone: values.phone,
+          course: values.course,
+          message: values.message,
+        });
+
+        if (result.success) {
+          setSubmitSuccess(true);
+          resetForm();
+        } else {
+          // Show more detailed error message
+          const errorMessage =
+            result.error || "Failed to submit enrollment. Please try again.";
+          setSubmitError(errorMessage);
+          console.error("Form submission error:", errorMessage);
+        }
+      } catch (error: any) {
+        const errorMessage =
+          error.message || "An unexpected error occurred. Please try again.";
+        setSubmitError(errorMessage);
+        console.error("Unexpected error:", error);
+      } finally {
+        setIsSubmitting(false);
+        setSubmitting(false);
+      }
     },
   });
-
-  const [currentStep, setCurrentStep] = useState(0);
 
   const formFields = [
     {
@@ -200,6 +244,18 @@ export default function EnrollNow() {
                   Submit Enrollment
                 </h2>
 
+                {submitSuccess && (
+                  <div className="mb-6 p-4 bg-green-900/50 border border-green-500/30 rounded-md text-green-300 animate-fadeIn">
+                    Thank you for your enrollment! We'll get back to you soon.
+                  </div>
+                )}
+
+                {submitError && (
+                  <div className="mb-6 p-4 bg-red-900/50 border border-red-500/30 rounded-md text-red-300 animate-fadeIn">
+                    {submitError}
+                  </div>
+                )}
+
                 <form onSubmit={formik.handleSubmit} className="space-y-3">
                   <div className="grid md:grid-cols-2 gap-3">
                     {formFields.map((field) => (
@@ -300,11 +356,14 @@ export default function EnrollNow() {
                     type="submit"
                     size="lg"
                     disabled={
-                      formik.isSubmitting || !formik.isValid || !formik.dirty
+                      isSubmitting ||
+                      formik.isSubmitting ||
+                      !formik.isValid ||
+                      !formik.dirty
                     }
                     className="disabled:opacity-50 disabled:cursor-not-allowed w-full bg-gradient-accent text-pure-white hover:scale-105 transition-all duration-300 shadow-lg hover:shadow-cyber-teal/50"
                   >
-                    Submit Enrollment
+                    {isSubmitting ? "Submitting..." : "Submit Enrollment"}
                     <Send className="ml-2 w-5 h-5" />
                   </Button>
                 </form>
