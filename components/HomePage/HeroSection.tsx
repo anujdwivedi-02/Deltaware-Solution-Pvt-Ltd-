@@ -63,7 +63,7 @@ export default function HeroSection() {
 
             <p className="text-lg text-mist max-w-2xl font-poppins font-medium">
               Empowering businesses and individuals through cutting-edge
-              cybersecurity, innovative development, AI-driven solutions, and
+              cybersecurity, innovative development, AI-driven Solution, and
               comprehensive technical training.
             </p>
 

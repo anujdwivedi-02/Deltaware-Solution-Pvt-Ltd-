@@ -42,7 +42,7 @@ const Navbar: React.FC = () => {
               DELTAWARE
             </span>
             <span className="text-[12px] font-fira-code text-mist tracking-widest">
-              SOLUTIONS
+              Solution
             </span>
           </div>
         </Link>

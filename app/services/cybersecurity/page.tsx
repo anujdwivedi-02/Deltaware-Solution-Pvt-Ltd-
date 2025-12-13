@@ -79,7 +79,7 @@ export default function CybersecurityService() {
               animate={{ scale: 1, opacity: 1 }}
               transition={{ delay: 0.2, duration: 0.5 }}
             >
-              <Badge>CYBERSECURITY SOLUTIONS</Badge>
+              <Badge>CYBERSECURITY Solution</Badge>
             </motion.div>
             <motion.h1
               className="mt-6 sm:text-5xl text-4xl font-poppins font-extrabold leading-tight text-pure-white"
@@ -98,7 +98,7 @@ export default function CybersecurityService() {
               transition={{ delay: 0.5, duration: 0.8 }}
             >
               Protect your digital assets with our comprehensive cybersecurity
-              solutions and ethical hacking services.
+              Solution and ethical hacking services.
             </motion.p>
           </motion.div>
         </div>
@@ -146,7 +146,7 @@ export default function CybersecurityService() {
                 Our team of certified ethical hackers and cybersecurity experts
                 employ cutting-edge techniques to identify vulnerabilities
                 before malicious actors can exploit them. We provide end-to-end
-                security solutions tailored to your specific business needs.
+                security Solution tailored to your specific business needs.
               </motion.p>
             </motion.div>
             <motion.div
@@ -216,7 +216,7 @@ export default function CybersecurityService() {
               viewport={{ once: true }}
               transition={{ delay: 0.3 }}
             >
-              Comprehensive security solutions to protect your digital assets
+              Comprehensive security Solution to protect your digital assets
             </motion.p>
           </motion.div>
 

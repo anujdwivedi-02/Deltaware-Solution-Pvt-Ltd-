@@ -50,11 +50,11 @@ export default function CareersPage() {
     {
       title: "Cloud Computing Courses",
       description:
-        "At Deltaware Solution, we believe that the future of IT is in the cloud. With businesses and organizations migrating to cloud-based solutions, cloud computing skills are in high demand. Whether you're a beginner looking to enter the field or an experienced professional seeking to enhance your skills, our comprehensive cloud computing courses are designed to meet your needs.",
+        "At Deltaware Solution, we believe that the future of IT is in the cloud. With businesses and organizations migrating to cloud-based Solution, cloud computing skills are in high demand. Whether you're a beginner looking to enter the field or an experienced professional seeking to enhance your skills, our comprehensive cloud computing courses are designed to meet your needs.",
       icon: <Cloud className="w-8 h-8" />,
       courses: [
         "Cloud Computing Fundamentals",
-        "AWS Certified Solutions Architect – Associate",
+        "AWS Certified Solution Architect – Associate",
         "Google Cloud Platform (GCP) Essentials",
         "Cloud Security Fundamentals",
       ],
@@ -69,7 +69,7 @@ export default function CareersPage() {
           "Virtualization and Containerization Technologies",
           "Cloud Networking and Security Fundamentals",
           "Identity and Access Management (IAM)",
-          "Cloud Storage Solutions and Database Services",
+          "Cloud Storage Solution and Database Services",
           "Serverless Computing and Microservices",
           "Monitoring, Logging, and Performance Optimization",
           "Disaster Recovery and Business Continuity Planning",
@@ -77,7 +77,7 @@ export default function CareersPage() {
           "Compliance and Governance in the Cloud",
         ],
         careerPaths: [
-          "Cloud Solutions Architect",
+          "Cloud Solution Architect",
           "Cloud Engineer",
           "DevOps Engineer",
           "Cloud Security Specialist",
@@ -102,7 +102,7 @@ export default function CareersPage() {
       gradient: "from-ai-violet to-magenta",
       detailedContent: {
         overview:
-          "The AI and ML field is rapidly evolving, with new breakthroughs happening regularly. From natural language processing to computer vision, from recommendation systems to autonomous vehicles, AI and ML are revolutionizing how we live and work. Organizations across industries are investing heavily in AI initiatives, creating a huge demand for skilled professionals who can develop and implement AI solutions.",
+          "The AI and ML field is rapidly evolving, with new breakthroughs happening regularly. From natural language processing to computer vision, from recommendation systems to autonomous vehicles, AI and ML are revolutionizing how we live and work. Organizations across industries are investing heavily in AI initiatives, creating a huge demand for skilled professionals who can develop and implement AI Solution.",
         curriculum: [
           "Mathematics for Machine Learning: Linear Algebra, Calculus, Statistics",
           "Programming Languages: Python, R for Data Science",
@@ -126,7 +126,7 @@ export default function CareersPage() {
           "AI Product Manager",
         ],
         marketInsights:
-          "The AI/ML job market is booming with a 74% annual growth rate. Professionals in this field earn an average of $120,000 to $250,000 annually. Top hiring companies include Google, Meta, Microsoft, Tesla, NVIDIA, and numerous startups focusing on AI-driven solutions.",
+          "The AI/ML job market is booming with a 74% annual growth rate. Professionals in this field earn an average of $120,000 to $250,000 annually. Top hiring companies include Google, Meta, Microsoft, Tesla, NVIDIA, and numerous startups focusing on AI-driven Solution.",
       },
     },
     {

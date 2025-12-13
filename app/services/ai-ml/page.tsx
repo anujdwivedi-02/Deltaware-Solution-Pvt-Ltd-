@@ -27,7 +27,7 @@ export default function AIMLService() {
       icon: <Cpu className="w-8 h-8" />,
       title: "Natural Language Processing",
       description:
-        "Advanced NLP solutions for text analysis, sentiment analysis, chatbots, and language translation applications.",
+        "Advanced NLP Solution for text analysis, sentiment analysis, chatbots, and language translation applications.",
     },
     {
       icon: <BarChart className="w-8 h-8" />,
@@ -37,7 +37,7 @@ export default function AIMLService() {
     },
     {
       icon: <Network className="w-8 h-8" />,
-      title: "Computer Vision Solutions",
+      title: "Computer Vision Solution",
       description:
         "Image and video analysis systems for object detection, recognition, and automated visual inspection.",
     },
@@ -143,7 +143,7 @@ export default function AIMLService() {
               animate={{ scale: 1, opacity: 1 }}
               transition={{ delay: 0.2, duration: 0.5 }}
             >
-              <Badge>AI & MACHINE LEARNING SOLUTIONS</Badge>
+              <Badge>AI & MACHINE LEARNING Solution</Badge>
             </motion.div>
             <motion.h1
               className="mt-6 sm:text-5xl text-4xl font-poppins font-extrabold leading-tight text-pure-white"
@@ -198,7 +198,7 @@ export default function AIMLService() {
               >
                 Our AI/ML services harness the power of data to create
                 intelligent systems that learn, adapt, and drive business value.
-                From predictive analytics to computer vision, we build solutions
+                From predictive analytics to computer vision, we build Solution
                 that transform how organizations operate.
               </motion.p>
               <motion.p
@@ -209,7 +209,7 @@ export default function AIMLService() {
                 transition={{ delay: 0.4, duration: 0.6 }}
               >
                 With expertise in the latest machine learning frameworks and
-                algorithms, our data scientists develop custom solutions that
+                algorithms, our data scientists develop custom Solution that
                 solve real-world problems and create competitive advantages.
               </motion.p>
             </motion.div>
@@ -277,7 +277,7 @@ export default function AIMLService() {
               viewport={{ once: true }}
               transition={{ delay: 0.3 }}
             >
-              Cutting-edge artificial intelligence solutions tailored to your
+              Cutting-edge artificial intelligence Solution tailored to your
               business needs
             </motion.p>
           </motion.div>
@@ -441,7 +441,7 @@ export default function AIMLService() {
                 viewport={{ once: true }}
                 transition={{ delay: 0.3 }}
               >
-                A systematic approach to delivering intelligent solutions
+                A systematic approach to delivering intelligent Solution
               </motion.p>
             </motion.div>
 

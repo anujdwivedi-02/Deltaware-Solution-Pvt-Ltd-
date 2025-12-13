@@ -35,7 +35,7 @@ export default function CTABanner() {
 
           <p className="text-xl text-mist max-w-2xl mx-auto font-poppins">
             Whether you're looking to upskill, launch your tech career, or
-            transform your business with cutting-edge solutions, we're here to
+            transform your business with cutting-edge Solution, we're here to
             make it happen.
           </p>
 

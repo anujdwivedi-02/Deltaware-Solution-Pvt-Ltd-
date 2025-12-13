@@ -89,7 +89,7 @@ export default function CloudComputingService() {
               animate={{ scale: 1, opacity: 1 }}
               transition={{ delay: 0.2, duration: 0.5 }}
             >
-              <Badge>CLOUD COMPUTING SOLUTIONS</Badge>
+              <Badge>CLOUD COMPUTING Solution</Badge>
             </motion.div>
             <motion.h1
               className="mt-6 sm:text-5xl text-4xl font-poppins font-extrabold leading-tight text-pure-white"
@@ -109,7 +109,7 @@ export default function CloudComputingService() {
               transition={{ delay: 0.5, duration: 0.8 }}
             >
               Harness the power of the cloud with our expert services and
-              solutions.
+              Solution.
             </motion.p>
           </motion.div>
         </div>
@@ -145,7 +145,7 @@ export default function CloudComputingService() {
                 Our cloud computing services enable businesses to leverage the
                 flexibility, scalability, and cost-effectiveness of cloud
                 platforms. From migration to optimization, we provide end-to-end
-                solutions across all major cloud providers.
+                Solution across all major cloud providers.
               </motion.p>
               <motion.p
                 className="text-lg text-mist font-poppins"
@@ -156,7 +156,7 @@ export default function CloudComputingService() {
               >
                 Whether you're moving to the cloud for the first time or
                 optimizing existing deployments, our certified cloud architects
-                design and implement solutions that align with your business
+                design and implement Solution that align with your business
                 objectives and technical requirements.
               </motion.p>
             </motion.div>
@@ -227,7 +227,7 @@ export default function CloudComputingService() {
               viewport={{ once: true }}
               transition={{ delay: 0.3 }}
             >
-              Comprehensive cloud solutions to accelerate your digital
+              Comprehensive cloud Solution to accelerate your digital
               transformation
             </motion.p>
           </motion.div>

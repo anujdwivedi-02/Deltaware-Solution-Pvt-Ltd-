@@ -14,7 +14,7 @@ export default function WebDevelopmentService() {
       icon: <Globe className="w-8 h-8" />,
       title: "Custom Web Applications",
       description:
-        "Tailored web solutions designed to meet your specific business requirements and user needs.",
+        "Tailored web Solution designed to meet your specific business requirements and user needs.",
     },
     {
       icon: <Smartphone className="w-8 h-8" />,
@@ -108,7 +108,7 @@ export default function WebDevelopmentService() {
               animate={{ scale: 1, opacity: 1 }}
               transition={{ delay: 0.2, duration: 0.5 }}
             >
-              <Badge>WEB DEVELOPMENT SOLUTIONS</Badge>
+              <Badge>WEB DEVELOPMENT Solution</Badge>
             </motion.div>
             <motion.h1
               className="mt-6 sm:text-5xl text-4xl font-poppins font-extrabold leading-tight text-pure-white"
@@ -173,8 +173,8 @@ export default function WebDevelopmentService() {
                 transition={{ delay: 0.4, duration: 0.6 }}
               >
                 With a focus on performance, scalability, and user experience,
-                our development team creates solutions that drive business
-                growth and engage your audience effectively.
+                our development team creates Solution that drive business growth
+                and engage your audience effectively.
               </motion.p>
             </motion.div>
             <motion.div
@@ -244,7 +244,7 @@ export default function WebDevelopmentService() {
               viewport={{ once: true }}
               transition={{ delay: 0.3 }}
             >
-              Comprehensive development solutions to bring your vision to life
+              Comprehensive development Solution to bring your vision to life
             </motion.p>
           </motion.div>
 
@@ -335,7 +335,7 @@ export default function WebDevelopmentService() {
                 viewport={{ once: true }}
                 transition={{ delay: 0.3 }}
               >
-                A systematic approach to delivering exceptional web solutions
+                A systematic approach to delivering exceptional web Solution
               </motion.p>
             </motion.div>
 

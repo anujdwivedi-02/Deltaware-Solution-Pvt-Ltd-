@@ -26,7 +26,7 @@ export default function ServicesPage() {
       icon: <Users className="w-8 h-8" />,
       title: "E-Commerce Companies",
       description:
-        "Secure your online transactions and customer data with our specialized cybersecurity and web development solutions.",
+        "Secure your online transactions and customer data with our specialized cybersecurity and web development Solution.",
       details: [
         "Payment Gateway Security",
         "Customer Data Protection",
@@ -40,9 +40,9 @@ export default function ServicesPage() {
       icon: <UserCheck className="w-8 h-8" />,
       title: "Healthcare Startups",
       description:
-        "Protect patient data and comply with healthcare regulations through our HIPAA-compliant solutions.",
+        "Protect patient data and comply with healthcare regulations through our HIPAA-compliant Solution.",
       details: [
-        "HIPAA Compliance Solutions",
+        "HIPAA Compliance Solution",
         "Patient Data Encryption",
         "Telemedicine Security",
         "Medical Device Security",
@@ -68,7 +68,7 @@ export default function ServicesPage() {
       icon: <UserPlus className="w-8 h-8" />,
       title: "SMEs & Enterprises",
       description:
-        "Scalable technology solutions designed to meet the unique needs of small to large businesses.",
+        "Scalable technology Solution designed to meet the unique needs of small to large businesses.",
       details: [
         "Custom Software Development",
         "Cloud Migration Services",
@@ -102,7 +102,7 @@ export default function ServicesPage() {
                   <Highlight className="bg-ai-gradient text-gradient">
                     End-to-End
                   </Highlight>{" "}
-                  Digital Solutions
+                  Digital Solution
                 </h1>
 
                 <p className="text-xl text-mist max-w-3xl mx-auto font-poppins font-medium">
@@ -144,7 +144,7 @@ export default function ServicesPage() {
                       AI Powered
                     </h3>
                     <p className="text-mist font-poppins">
-                      Data-driven insights and intelligent automation solutions
+                      Data-driven insights and intelligent automation Solution
                     </p>
                   </div>
                 </div>
@@ -183,7 +183,7 @@ export default function ServicesPage() {
               <h2 className="text-4xl md:text-5xl font-poppins font-bold mb-4 text-pure-white">
                 Comprehensive{" "}
                 <span className="bg-ai-gradient text-gradient">
-                  Tech Solutions
+                  Tech Solution
                 </span>
               </h2>
               <p className="text-lg text-mist max-w-3xl mx-auto font-poppins">

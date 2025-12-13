@@ -11,7 +11,7 @@ export default function AboutSection() {
       icon: <Target className="w-8 h-8" />,
       title: "Our Mission",
       description:
-        "To empower individuals and businesses with cutting-edge technology solutions and world-class training.",
+        "To empower individuals and businesses with cutting-edge technology Solution and world-class training.",
       color: "from-cyber-teal to-neural-blue",
     },
     {
@@ -69,13 +69,13 @@ export default function AboutSection() {
             <Highlight className="text-black">Anuj Kumar Dwivedi</Highlight>, a
             seasoned cybersecurity expert with 4+ years of experience and
             co-founded by Ashutosh Dwivedi. Our company is committed to
-            delivering cutting-edge cybersecurity solutions and web development
+            delivering cutting-edge cybersecurity Solution and web development
             services to businesses worldwide.
           </p>
 
           <p className="text-mist leading-relaxed font-poppins text-justify">
             Our mission is to fortify the digital landscape by providing
-            top-tier security solutions and innovative web services. We believe
+            top-tier security Solution and innovative web services. We believe
             in Integrity, Innovation and Excellence, ensuring that our clients
             receive the highest level of protection and functionality for their
             online presence. With a team of highly skilled professionals, we

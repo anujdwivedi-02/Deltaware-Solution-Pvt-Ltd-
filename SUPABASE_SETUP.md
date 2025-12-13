@@ -84,7 +84,7 @@ GRANT INSERT ON enrollment_forms TO authenticated;
 
 ## 5. Troubleshooting RLS Issues
 
-If you encounter the error "new row violates row-level security policy", try these solutions:
+If you encounter the error "new row violates row-level security policy", try these Solution:
 
 ### Solution 1: Complete RLS Reset
 

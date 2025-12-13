@@ -8,6 +8,7 @@ import {
   Phone,
   Facebook,
   Instagram,
+  Youtube,
 } from "lucide-react";
 import Link from "next/link";
 import Image from "next/image";
@@ -21,11 +22,6 @@ const Footer: React.FC = () => {
         Supporting You at Every Step.
       </>
     ),
-    socialLinks: [
-      { icon: Github, href: "#", label: "GitHub" },
-      { icon: Linkedin, href: "#", label: "LinkedIn" },
-      { icon: Twitter, href: "#", label: "Twitter" },
-    ],
   };
 
   const linkSections = [
@@ -34,7 +30,7 @@ const Footer: React.FC = () => {
       links: [
         { href: "/services/cybersecurity", label: "Cybersecurity" },
         { href: "/services/web-development", label: "Web Development" },
-        { href: "/services/ai-ml", label: "AI & ML Solutions" },
+        { href: "/services/ai-ml", label: "AI & ML Solution" },
         { href: "/services/technical-training", label: "Technical Training" },
       ],
     },
@@ -68,12 +64,24 @@ const Footer: React.FC = () => {
     { href: "/terms-of-service", label: "Terms of Service" },
   ];
   const socialLinks = [
-    { icon: <Facebook className="w-5 h-5" />, href: "#", label: "Facebook" },
-    { icon: <Twitter className="w-5 h-5" />, href: "#", label: "Twitter" },
-    { icon: <Linkedin className="w-5 h-5" />, href: "#", label: "LinkedIn" },
+    {
+      icon: <Facebook className="w-5 h-5" />,
+      href: "https://www.facebook.com/share/1BxT97uzG1/",
+      label: "Facebook",
+    },
+    {
+      icon: <Youtube className="w-5 h-5" />,
+      href: "https://youtube.com/@deltawaresolution?si=rLOE-2AZB6eltuJs",
+      label: "YouTube",
+    },
+    {
+      icon: <Linkedin className="w-5 h-5" />,
+      href: "https://www.linkedin.com/company/deltawaresolution-private-limited/",
+      label: "LinkedIn",
+    },
     {
       icon: <Instagram className="w-5 h-5" />,
-      href: "#",
+      href: "https://www.instagram.com/deltawaresolution20_25?igsh=MzI0YTduaWZqOThm",
       label: "Instagram",
     },
   ];
@@ -99,7 +107,7 @@ const Footer: React.FC = () => {
                   DELTAWARE
                 </span>
                 <span className="text-[12px] font-fira-code text-mist tracking-widest">
-                  SOLUTIONS
+                  Solution
                 </span>
               </div>
             </Link>
@@ -155,7 +163,7 @@ const Footer: React.FC = () => {
 
         <div className="border-t border-white/5 pt-8 flex flex-col md:flex-row justify-between items-center text-xs text-graphite font-fira-code">
           <p>
-            &copy; {new Date().getFullYear()} Deltaware Solutions. All rights
+            &copy; {new Date().getFullYear()} Deltaware Solution. All rights
             reserved.
           </p>
           <div className="flex gap-4 sm:my-0 mt-3">

@@ -2,7 +2,7 @@
 
 ## What Was Accomplished
 
-I've successfully integrated email functionality into your Deltaware Solutions website using Nodemailer. Here's what was implemented:
+I've successfully integrated email functionality into your Deltaware Solution website using Nodemailer. Here's what was implemented:
 
 ### 1. Backend Implementation
 

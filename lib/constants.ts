@@ -45,7 +45,7 @@ export const SERVICES = [
     icon: "/cybersecurity.jpg",
     title: "Cybersecurity & Ethical Hacking",
     description:
-      "Protect your digital assets with our comprehensive cybersecurity solutions and ethical hacking services.",
+      "Protect your digital assets with our comprehensive cybersecurity Solution and ethical hacking services.",
     features: [
       "Vulnerability Assessment & Penetration Testing",
       "Security Audits & Compliance",
@@ -62,9 +62,9 @@ export const SERVICES = [
       "Build scalable, modern applications with cutting-edge technologies and best practices.",
     features: [
       "Custom Web & Mobile Applications",
-      "Cloud-Native Solutions",
+      "Cloud-Native Solution",
       "API Development & Integration",
-      "Enterprise Software Solutions",
+      "Enterprise Software Solution",
     ],
     gradient: "from-ai-violet to-neural-blue",
   },
@@ -77,7 +77,7 @@ export const SERVICES = [
     features: [
       "Machine Learning Model Development",
       "Natural Language Processing",
-      "Computer Vision Solutions",
+      "Computer Vision Solution",
       "Predictive Analytics & Forecasting",
     ],
     gradient: "from-neural-blue to-ai-violet",
@@ -87,7 +87,7 @@ export const SERVICES = [
     icon: "/cloud-computing.jpg",
     title: "Cloud Computing Services",
     description:
-      "Harness the power of the cloud with our expert services and solutions.",
+      "Harness the power of the cloud with our expert services and Solution.",
     features: [
       "Cloud Migration & Strategy",
       "DevOps & Continuous Integration",
@@ -210,7 +210,7 @@ export const ENROLL_NOW_COURSES = [
   },
   {
     id: "cloud-computing",
-    title: "Cloud Solutions Architect",
+    title: "Cloud Solution Architect",
   },
   {
     id: "technical-training",

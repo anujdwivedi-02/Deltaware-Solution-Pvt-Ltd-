@@ -63,7 +63,7 @@ const getContactEmailTemplate = (data: ContactFormData) => {
       </div>
     </div>
     <div class="footer">
-      <p>This email was sent from the Deltaware Solutions website contact form.</p>
+      <p>This email was sent from the Deltaware Solution website contact form.</p>
     </div>
   </div>
 </body>
@@ -126,7 +126,7 @@ const getEnrollmentEmailTemplate = (data: EnrollmentFormData) => {
       }
     </div>
     <div class="footer">
-      <p>This email was sent from the Deltaware Solutions website enrollment form.</p>
+      <p>This email was sent from the Deltaware Solution website enrollment form.</p>
     </div>
   </div>
 </body>
@@ -189,10 +189,10 @@ const getUserConfirmationTemplate = (
           : ""
       }
       
-      <p>We appreciate your interest in Deltaware Solutions.</p>
+      <p>We appreciate your interest in Deltaware Solution.</p>
     </div>
     <div class="footer">
-      <p>&copy; ${new Date().getFullYear()} Deltaware Solutions. All rights reserved.</p>
+      <p>&copy; ${new Date().getFullYear()} Deltaware Solution. All rights reserved.</p>
     </div>
   </div>
 </body>
@@ -246,7 +246,7 @@ export const sendUserConfirmationEmail = async (
       to: data.email, // Sending to user
       subject:
         formType === "contact"
-          ? "Thank you for contacting Deltaware Solutions"
+          ? "Thank you for contacting Deltaware Solution"
           : "Thank you for your enrollment interest",
       html: getUserConfirmationTemplate(data, formType),
     };

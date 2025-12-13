@@ -109,7 +109,7 @@ export default function ServicesSection() {
           </div>
           <h2 className="text-4xl md:text-5xl font-poppins font-bold mb-4 text-pure-white">
             Comprehensive{" "}
-            <span className="bg-ai-gradient text-gradient">Tech Solutions</span>
+            <span className="bg-ai-gradient text-gradient">Tech Solution</span>
           </h2>
           <p className="text-lg text-mist max-w-3xl mx-auto font-poppins">
             From cybersecurity to AI development, we provide end-to-end

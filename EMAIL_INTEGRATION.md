@@ -2,7 +2,7 @@
 
 ## Overview
 
-This document explains how email functionality has been integrated into the Deltaware Solutions website using Nodemailer.
+This document explains how email functionality has been integrated into the Deltaware Solution website using Nodemailer.
 
 ## Implementation Details
 
