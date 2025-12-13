@@ -162,7 +162,7 @@ const Footer: React.FC = () => {
         </div>
 
         <div className="border-t border-white/5 pt-8 flex flex-col md:flex-row justify-between items-center text-xs text-graphite font-fira-code">
-          <p>
+          <p className="text-center md:text-left">
             &copy; {new Date().getFullYear()} Deltaware Solution. All rights
             reserved.
           </p>

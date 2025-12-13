@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import { NAV_ITEMS } from "@/lib/constants";
 import { motion, AnimatePresence } from "framer-motion";
 import Link from "next/link";
@@ -10,12 +10,39 @@ const Navbar: React.FC = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
   const pathName = usePathname();
+  const mobileMenuRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
     const handleScroll = () => setScrolled(window.scrollY > 20);
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
+
+  // Close mobile menu when clicking outside
+  useEffect(() => {
+    const handleClickOutside = (event: MouseEvent) => {
+      if (
+        isOpen &&
+        mobileMenuRef.current &&
+        !mobileMenuRef.current.contains(event.target as Node)
+      ) {
+        setIsOpen(false);
+      }
+    };
+
+    document.addEventListener("mousedown", handleClickOutside);
+    return () => document.removeEventListener("mousedown", handleClickOutside);
+  }, [isOpen]);
+
+  // Close mobile menu when route changes
+  useEffect(() => {
+    setIsOpen(false);
+  }, [pathName]);
+
+  // Handle enroll now button click
+  const handleEnrollClick = () => {
+    setIsOpen(false);
+  };
 
   return (
     <nav
@@ -105,6 +132,7 @@ const Navbar: React.FC = () => {
       <AnimatePresence>
         {isOpen && (
           <motion.div
+            ref={mobileMenuRef}
             initial={{ opacity: 0, height: 0 }}
             animate={{ opacity: 1, height: "auto" }}
             exit={{ opacity: 0, height: 0 }}
@@ -122,20 +150,21 @@ const Navbar: React.FC = () => {
                   <Link
                     href={item.path}
                     className={`text-lg font-heading hover:text-cyber transition-colors  ${
-                      location.pathname === item.path
-                        ? "text-cyber"
-                        : "text-white"
+                      pathName === item.path ? "text-cyber" : "text-white"
                     }`}
+                    onClick={() => setIsOpen(false)} // Close menu on link click
                   >
                     {item.label}
                   </Link>
                 </motion.div>
               ))}
-              <AnimatedButton
-                textName="Enroll Now"
-                href="/enroll-now"
-                margin={"mt-4"}
-              />
+              <div onClick={handleEnrollClick}>
+                <AnimatedButton
+                  textName="Enroll Now"
+                  href="/enroll-now"
+                  margin={"mt-4"}
+                />
+              </div>
             </div>
           </motion.div>
         )}
