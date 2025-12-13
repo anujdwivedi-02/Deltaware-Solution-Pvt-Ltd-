@@ -11,6 +11,9 @@ const createTransporter = () => {
       user: process.env.NEXT_PUBLIC_EMAIL_USER,
       pass: process.env.NEXT_PUBLIC_EMAIL_PASSWORD,
     },
+    tls: {
+      rejectUnauthorized: false, // optional, but avoids cert issues
+    },
   });
 
   return transporter;
