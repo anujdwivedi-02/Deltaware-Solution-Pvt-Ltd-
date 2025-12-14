@@ -1,10 +1,11 @@
-import React, { useState, useEffect, useRef } from "react";
+import React, { useState, useEffect, useRef, RefObject } from "react";
 import { NAV_ITEMS } from "@/lib/constants";
 import { motion, AnimatePresence } from "framer-motion";
 import Link from "next/link";
 import Image from "next/image";
 import { usePathname } from "next/navigation";
 import AnimatedButton from "../ui/AnimatedButton";
+import { useOutsideClick } from "@/hooks/useOutsideClick";
 
 const Navbar: React.FC = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -18,34 +19,26 @@ const Navbar: React.FC = () => {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
-  // Close mobile menu when clicking outside
-  useEffect(() => {
-    const handleClickOutside = (event: MouseEvent) => {
-      if (
-        isOpen &&
-        mobileMenuRef.current &&
-        !mobileMenuRef.current.contains(event.target as Node)
-      ) {
-        setIsOpen(false);
-      }
-    };
-
-    document.addEventListener("mousedown", handleClickOutside);
-    return () => document.removeEventListener("mousedown", handleClickOutside);
-  }, [isOpen]);
-
-  // Close mobile menu when route changes
-  useEffect(() => {
-    setIsOpen(false);
-  }, [pathName]);
-
   // Handle enroll now button click
   const handleEnrollClick = () => {
     setIsOpen(false);
   };
 
+  // Handle outside click to close modal
+  useOutsideClick(
+    mobileMenuRef as RefObject<HTMLElement>,
+    () => {
+      setIsOpen(false);
+    },
+    isOpen
+  );
+  const toggleClick = () => {
+    if (isOpen) setIsOpen(false);
+    else setIsOpen(true);
+  };
   return (
     <nav
+      ref={mobileMenuRef}
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
         scrolled
           ? "bg-quantum/90 backdrop-blur-sm border-b border-white/10 py-4"
@@ -103,8 +96,8 @@ const Navbar: React.FC = () => {
         </div>
 
         <button
-          onClick={() => setIsOpen(!isOpen)}
-          className="relative w-10 h-10 flex flex-col justify-center items-center group lg:hidden text-white transition-all"
+          onClick={toggleClick}
+          className="relative w-10 h-10 flex flex-col justify-center items-center group lg:hidden text-white transition-all z-50"
         >
           <span
             className={`
@@ -132,7 +125,6 @@ const Navbar: React.FC = () => {
       <AnimatePresence>
         {isOpen && (
           <motion.div
-            ref={mobileMenuRef}
             initial={{ opacity: 0, height: 0 }}
             animate={{ opacity: 1, height: "auto" }}
             exit={{ opacity: 0, height: 0 }}

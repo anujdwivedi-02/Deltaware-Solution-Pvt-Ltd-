@@ -23,6 +23,11 @@ const nextConfig: NextConfig = {
     optimizePackageImports: ["lucide-react", "framer-motion"],
   },
 
+  // Configure images for static export
+  images: {
+    unoptimized: true,
+  },
+
   // Enable static export as per Next.js 16 requirements
   output: "export",
 };
