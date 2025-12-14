@@ -1,4 +1,3 @@
-export const dynamic = "force-static";
 import { NextResponse } from "next/server";
 import { insertEnrollmentForm } from "@/lib/databaseService";
 import { sendAdminEmail, sendUserConfirmationEmail } from "@/lib/emailService";
