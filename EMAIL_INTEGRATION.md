@@ -60,7 +60,7 @@ These are already configured in your `.env` file.
 
 ### Contact Form Flow
 
-1. User submits contact form on `/contact-us` page
+1. User submits contact form on `/contact` page
 2. Data is saved to Supabase database
 3. Admin receives notification email with form details
 4. User receives confirmation email
@@ -76,7 +76,7 @@ These are already configured in your `.env` file.
 
 To test the email functionality:
 
-1. Visit the contact page: `/contact-us`
+1. Visit the contact page: `/contact`
 2. Fill out and submit the contact form
 3. Check the admin email (contact@deltawaresolution.com) for notification
 4. Check the email you provided in the form for user confirmation

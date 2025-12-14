@@ -158,7 +158,7 @@ export default function HowToApply() {
           <p className="text-mist mt-4 font-poppins">
             Have questions?{" "}
             <a
-              href="/contact-us?utm_source=homepage&utm_medium=howtoapply"
+              href="/contact?utm_source=homepage&utm_medium=howtoapply"
               className="text-cyber-teal hover:underline"
             >
               Contact us

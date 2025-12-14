@@ -515,7 +515,7 @@ export default function TechnicalTrainingService() {
               <a
                 referrerPolicy="no-referrer-when-downgrade"
                 target="_blank"
-                href={"/contact-us"}
+                href={"/contact"}
               >
                 <Button
                   size="lg"

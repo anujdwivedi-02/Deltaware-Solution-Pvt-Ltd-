@@ -440,7 +440,7 @@ export default function CloudComputingService() {
               <a
                 referrerPolicy="no-referrer-when-downgrade"
                 target="_blank"
-                href={"/contact-us"}
+                href={"/contact"}
               >
                 <Button
                   size="lg"

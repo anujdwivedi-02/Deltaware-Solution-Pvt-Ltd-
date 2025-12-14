@@ -17,7 +17,7 @@ I've successfully integrated email functionality into your Deltaware Solution we
 
 ### 2. Frontend Updates
 
-- **Updated contact form** (`app/contact-us/page.tsx`) to use the API client instead of direct database calls
+- **Updated contact form** (`app/contact/page.tsx`) to use the API client instead of direct database calls
 - **Updated enrollment form** (`app/enroll-now/page.tsx`) to use the API client instead of direct database calls
 
 ### 3. Email Features
@@ -37,7 +37,7 @@ I've successfully integrated email functionality into your Deltaware Solution we
 ## How to Test
 
 1. Visit your website (likely at http://localhost:3000)
-2. Navigate to the Contact Us page (`/contact-us`)
+2. Navigate to the Contact Us page (`/contact`)
 3. Fill out and submit the contact form
 4. Check the admin email (`contact@deltawaresolution.com`) for the notification
 5. Check the email you provided in the form for the user confirmation

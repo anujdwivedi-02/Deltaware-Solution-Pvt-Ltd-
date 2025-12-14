@@ -116,7 +116,7 @@ const privacyPolicyData = {
       ],
       listItems: [
         "By email: info@deltawaresolution.com",
-        "By visiting our contact page: deltawaresolution.com/contact-us",
+        "By visiting our contact page: deltawaresolution.com/contact",
         "By mail: Kalu kuwan, Infront of natraj gali, Banda, Uttar Pradesh 210001, India",
       ],
     },

@@ -37,8 +37,8 @@ const Footer: React.FC = () => {
     {
       title: "Company",
       links: [
-        { href: "/about-us", label: "About Us" },
-        { href: "/contact-us", label: "Contact Us" },
+        { href: "/about", label: "About Us" },
+        { href: "/contact", label: "Contact Us" },
         { href: "/careers", label: "Careers" },
       ],
     },

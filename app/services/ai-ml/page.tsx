@@ -510,7 +510,7 @@ export default function AIMLService() {
               <a
                 referrerPolicy="no-referrer-when-downgrade"
                 target="_blank"
-                href={"/contact-us"}
+                href={"/contact"}
               >
                 <Button
                   size="lg"

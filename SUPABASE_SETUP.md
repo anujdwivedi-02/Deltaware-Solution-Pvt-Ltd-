@@ -196,7 +196,7 @@ ALTER TABLE enrollment_forms OWNER TO postgres;
 After setting up the environment variables and database tables, you can test the forms:
 
 1. Start your Next.js development server: `npm run dev`
-2. Navigate to `/contact-us` and submit the form
+2. Navigate to `/contact` and submit the form
 3. Navigate to `/enroll-now` and submit the form
 4. Check your Supabase table data to confirm entries are being saved
 
