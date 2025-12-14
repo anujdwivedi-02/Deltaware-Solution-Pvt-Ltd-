@@ -22,6 +22,9 @@ const nextConfig: NextConfig = {
     // Reduce bundle size by removing unused code
     optimizePackageImports: ["lucide-react", "framer-motion"],
   },
+
+  // Enable static export as per Next.js 16 requirements
+  output: "export",
 };
 
 export default nextConfig;
