@@ -6,7 +6,7 @@ import AnimateOnView from "@/components/ui/AnimateOnView";
 import Button from "@/components/ui/Button";
 import { enrollmentForm } from "@/lib/formvalidation";
 import { ENROLL_NOW_COURSES } from "@/lib/constants";
-import { submitEnrollmentForm } from "@/lib/apiClient";
+import { insertEnrollmentForm } from "@/lib/databaseService";
 
 // Define the form values type
 interface FormValues {
@@ -50,7 +50,7 @@ export default function EnrollNow() {
       setSubmitSuccess(false);
 
       try {
-        const result = await submitEnrollmentForm({
+        const result = await insertEnrollmentForm({
           name: values.name,
           email: values.email,
           phone: values.phone,
