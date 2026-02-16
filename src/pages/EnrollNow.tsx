@@ -63,16 +63,32 @@ export default function EnrollNow() {
           resetForm();
         } else {
           // Show more detailed error message
-          const errorMessage =
+          let errorMessage =
             result.error || "Failed to submit enrollment. Please try again.";
+
+          if (
+            errorMessage.toLowerCase().includes("failed to fetch") ||
+            errorMessage.toLowerCase().includes("network error") ||
+            errorMessage.toLowerCase().includes("err_name_not_resolved")
+          ) {
+            errorMessage =
+              "Network Error: Unable to connect to our servers. Please check your internet connection and try again.";
+          }
+
           setSubmitError(errorMessage);
           console.error("Form submission error:", errorMessage);
         }
       } catch (error: unknown) {
-        const errorMessage =
-          error instanceof Error
-            ? error.message
-            : "An unexpected error occurred. Please try again.";
+        let errorMessage = "An unexpected error occurred. Please try again.";
+
+        if (error instanceof Error) {
+          errorMessage = error.message;
+          if (errorMessage.toLowerCase().includes("failed to fetch")) {
+            errorMessage =
+              "Network Error: Unable to connect to our servers. Please check your internet connection.";
+          }
+        }
+
         setSubmitError(errorMessage);
         console.error("Unexpected error:", error);
       } finally {

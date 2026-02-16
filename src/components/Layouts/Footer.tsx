@@ -89,21 +89,13 @@ const Footer: React.FC = () => {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-[2fr_1fr_1fr_1fr] gap-12 mb-12">
           <div className="space-y-6">
             <Link to="/" className="flex items-center gap-2 group">
-              <div className="md:w-16 md:h-16 w-12 h-12 relative bg-gradient-to-br from-cyber to-violet rounded-lg flex items-center justify-center group-hover:shadow-[0_0_15px_#00E6E6] transition-all">
+              <div className="sm:w-44 sm:h-12 w-36 h-full relative bg-gradient-to-br from-cyber to-violet rounded-sm flex items-center justify-center group-hover:shadow-[0_0_15px_#00E6E6] transition-all">
                 <img
-                  src="/logo.jpg"
+                  src="/logo.jpeg"
                   alt="Deltaware Logo"
-                  className="md:w-16 md:h-16 w-12 h-12 rounded-md object-cover"
+                  className="rounded-sm object-cover"
                 />
                 <div className="h-full w-full absolute inset-0"></div>
-              </div>
-              <div className="flex flex-col">
-                <span className="text-2xl font-fira-code font-heading font-bold text-white leading-none">
-                  DELTAWARE
-                </span>
-                <span className="text-[12px] font-fira-code text-mist tracking-widest">
-                  Solution
-                </span>
               </div>
             </Link>
             <p className="text-mist text-xl leading-relaxed">

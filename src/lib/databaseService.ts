@@ -84,9 +84,20 @@ export async function insertContactForm(formData: ContactFormData) {
 
     if (error) {
       console.error("Supabase error:", error);
+      let errorMessage = error.message;
+
+      // Provide more helpful message for common connectivity issues
+      if (
+        errorMessage === "TypeError: Failed to fetch" ||
+        errorMessage === "Failed to fetch"
+      ) {
+        errorMessage =
+          "Network error: Unable to reach the server. Please check your internet connection or project configuration.";
+      }
+
       return {
         success: false,
-        error: `${error.message} (Code: ${error.code})`,
+        error: `${errorMessage} (Code: ${error.code || "N/A"})`,
       };
     }
 
@@ -182,9 +193,20 @@ export async function insertEnrollmentForm(formData: EnrollmentFormData) {
 
     if (error) {
       console.error("Supabase error:", error);
+      let errorMessage = error.message;
+
+      // Provide more helpful message for common connectivity issues
+      if (
+        errorMessage === "TypeError: Failed to fetch" ||
+        errorMessage === "Failed to fetch"
+      ) {
+        errorMessage =
+          "Network error: Unable to reach the server. Please check your internet connection or project configuration.";
+      }
+
       return {
         success: false,
-        error: `${error.message} (Code: ${error.code})`,
+        error: `${errorMessage} (Code: ${error.code || "N/A"})`,
       };
     }
 
